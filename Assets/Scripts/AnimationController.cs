@@ -1,27 +1,73 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private int layerIndex = 1;
+
+    [Header("Hit Reaction Settings")] [SerializeField]
+    private int layerIndex = 1;
+
     [SerializeField] private float initialWeight = 1f;
     [SerializeField] private float fadeOutDuration = 0.5f;
     [SerializeField] private float holdDuration = 0f;
 
+    #region Contsants
+
+    private static readonly int IsNormalDancing = Animator.StringToHash("IsNormalDancing");
+    private static readonly int NormalDancingBlend = Animator.StringToHash("NormalDancingBlend");
+    private static readonly int IsCrazyDancing = Animator.StringToHash("IsCrazyDancing");
+    private static readonly int IsDancing = Animator.StringToHash("IsDancing");
+    
+    private const int ComboNormalStart = 10;
+    private const int ComboNormalEnd = 29;
+    private const int ComboCrazyStart = 30; 
+
+    #endregion
+    
+    
+
     private Coroutine fadeCoroutine;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        if (!collision.gameObject.CompareTag("Tomato")) return;
-        TomatoHit();
+        TomatoCollision.OnTomatoHit += TomatoHitPlayer;
+        ScoreManager.Instance.OnComboChangedEvent.AddListener(OnComboChanged);
     }
-    
-    [ContextMenu("Debug Tomato Hit")]
-    private void TomatoHit()
+
+    private void OnComboChanged(int combo)
     {
-        if (animator == null) return;
+        switch (combo)
+        {
+            case 0:
+                // Reset all dance states   
+                animator.SetBool(IsNormalDancing, false);
+                animator.SetFloat(NormalDancingBlend, 0);
+                animator.SetBool(IsCrazyDancing, false);
+                break;
+            case 1:
+                animator.SetBool(IsDancing, true);
+                break;
+            case ComboNormalStart:
+                animator.SetBool(IsNormalDancing, true);
+                break;
+            case ComboCrazyStart:
+                animator.SetBool(IsCrazyDancing, true);
+                break;
+        }
+        
+        if (combo >= ComboNormalStart && combo < ComboCrazyStart)
+        {
+            float blend = (float)(combo - ComboNormalStart) / (ComboNormalEnd - ComboNormalStart);
+            animator.SetFloat(NormalDancingBlend, blend);
+        }
+    }
+
+
+    [ContextMenu("Debug Tomato Hit")]
+    private void TomatoHitPlayer()
+    {
+        if (!animator) return;
 
         animator.SetLayerWeight(layerIndex, initialWeight);
         animator.SetTrigger("GotHit");
@@ -49,14 +95,15 @@ public class AnimationController : MonoBehaviour
         }
 
         var start = animator.GetLayerWeight(layerIndex);
-        var t = 0f;
-        while (t < 1f)
+        var time = 0f;
+        while (time < 1f)
         {
-            t += Time.deltaTime / duration;
-            float w = Mathf.Lerp(start, target, t);
-            animator.SetLayerWeight(layerIndex, w);
+            time += Time.deltaTime / duration;
+            var weight = Mathf.Lerp(start, target, time);
+            animator.SetLayerWeight(layerIndex, weight);
             yield return null;
         }
+
         animator.SetLayerWeight(layerIndex, target);
     }
 

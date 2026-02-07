@@ -31,6 +31,20 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public AudioClip GetAudioClip(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            {
+                print("Sound" + name + "not found");
+                return null;
+            }
+        }
+
+        return s.clip;
+    }
+
     public void PlayVFX(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
