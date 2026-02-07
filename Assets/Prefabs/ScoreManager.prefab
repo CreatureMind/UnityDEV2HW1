@@ -177,7 +177,11 @@ MonoBehaviour:
       randomness: 90
       fadeOut: 1
       randomnessMode: 0
+  _mostPreciseScore: 100
   OnScoreChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnComboChangedEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4512863857872948263
