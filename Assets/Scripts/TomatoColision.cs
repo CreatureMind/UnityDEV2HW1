@@ -24,9 +24,9 @@ public class TomatoCollision : MonoBehaviour
     private IEnumerator SplashRoutine()
     {
         rb.isKinematic = true;
-        if (tomatoMesh != null) tomatoMesh.enabled = false;
-        if (tomatoCollider != null) tomatoCollider.enabled = false;
-        if (splashParticles != null)
+        if (tomatoMesh) tomatoMesh.enabled = false;
+        if (tomatoCollider) tomatoCollider.enabled = false;
+        if (splashParticles)
         {
             splashParticles.Play();
             yield return new WaitForSeconds(splashParticles.main.duration);

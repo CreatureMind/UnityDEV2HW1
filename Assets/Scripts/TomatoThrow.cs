@@ -30,12 +30,12 @@ public class TomatoThrow : MonoBehaviour
             return;
         }
 
-        Vector3 targetPoint = GetRandomPointInBox(dancerCollider);
-        Vector3 spawnPos = mainCam.transform.position + (mainCam.transform.forward * 1f); 
-        GameObject newTomato = Instantiate(tomatoPrefab, spawnPos, Quaternion.identity);
-        Vector3 direction = (targetPoint - spawnPos).normalized;
-        Rigidbody rb = newTomato.GetComponent<Rigidbody>();
-        if (rb != null)
+        var targetPoint = GetRandomPointInBox(dancerCollider);
+        var spawnPos = mainCam.transform.position + (mainCam.transform.forward * 1f); 
+        var newTomato = Instantiate(tomatoPrefab, spawnPos, Quaternion.identity);
+        var direction = (targetPoint - spawnPos).normalized;
+        var rb = newTomato.GetComponent<Rigidbody>();
+        if (rb)
         {
             rb.AddForce(direction * throwForce, ForceMode.Impulse);
         }
@@ -43,8 +43,8 @@ public class TomatoThrow : MonoBehaviour
 
     private Vector3 GetRandomPointInBox(BoxCollider box)
     {
-        Vector3 center = box.center;
-        Vector3 extents = box.size * 0.5f;
+        var center = box.center;
+        var extents = box.size * 0.5f;
 
         Vector3 randomLocalPoint = new Vector3(
             Random.Range(center.x - extents.x, center.x + extents.x),
