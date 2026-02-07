@@ -21,9 +21,6 @@ public class ScoreManager : Singleton<ScoreManager>
     protected override bool DontDestoryOnLoad => false;
 
     [SerializeField]
-    private InputActionReference _addScoreAction;
-
-    [SerializeField]
     private TextMeshProUGUI _scoreText;
     [SerializeField]
     private TextMeshProUGUI _comboText;
@@ -34,12 +31,12 @@ public class ScoreManager : Singleton<ScoreManager>
     private ScoreRangeData _falloffData;
 
     [SerializeField]
-    private int _scoreToAdd = 1;
-
-    [SerializeField]
     private TextEffectData _comboStreakEffect;
     [SerializeField]
     private TextEffectData _comboLostEffect;
+
+    [SerializeField]
+    private int _mostPreciseScore;
 
     public UnityEvent<int> OnScoreChangedEvent;
     public UnityEvent<int> OnComboChangedEvent;
@@ -64,6 +61,15 @@ public class ScoreManager : Singleton<ScoreManager>
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="precision">num between 0-1, 0 being a miss and 1 being a direct hit</param>
+    public void SendThreshold(float precision)
+    {
+        AddScore((int)(_mostPreciseScore * precision));
+    }
+
     public void AddScore(int amount)
     {
         if (amount > 0)
@@ -83,9 +89,12 @@ public class ScoreManager : Singleton<ScoreManager>
 
     protected override void OnSingletonCreated()
     {
-        _addScoreAction.action.performed += _ => AddScore(_scoreToAdd);
-
         _scoreData.Sort((a, b) => a.anyAbove > b.anyAbove ? 1 : -1);
+    }
+
+    public ScoreRangeData GetDataForThreshold(float precision)
+    {
+        return GetDataForScore((int)(_mostPreciseScore * precision));
     }
 
     public ScoreRangeData GetDataForScore(int score)
