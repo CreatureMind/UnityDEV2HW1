@@ -8,15 +8,24 @@ namespace Arrows
     [RequireComponent(typeof(Collider2D))]
     public class ArrowGoal : MonoBehaviour
     {
+        [SerializeField] private float threshold;
+        
         public static event Action OnMiss;
-        private float threshold;
-        private readonly List<ArrowMovement> arrows = new();
+        private readonly List<Arrow> arrows = new();
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Arrow"))
             {
-                arrows.Add(collision.GetComponent<ArrowMovement>());
+                arrows.Add(collision.GetComponent<Arrow>());
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("Arrow"))
+            {
+                OnMiss?.Invoke();
             }
         }
 
@@ -55,12 +64,32 @@ namespace Arrows
                 ScoreManager.Instance.SendThreshold(0);
                 OnMiss?.Invoke();
             }
-                
-            /*switch (direction)
+
+            HashSet<Arrow> arrowsToRemove = new HashSet<Arrow>();
+            foreach (var arrow in arrows)
             {
-                case Direction.Left:
-                    if (arrows.Contains())
-            }*/
+                if(direction != arrow.direction)
+                    continue;
+                
+                var distance = arrow.transform.position.y - transform.position.y;
+                var unmapped = Mathf.Abs(distance) / threshold;
+                if (unmapped > 1)
+                {
+                    ScoreManager.Instance.SendThreshold(0);
+                    OnMiss?.Invoke();
+                    arrowsToRemove.Add(arrow);
+                }
+                else
+                {
+                    ScoreManager.Instance.SendThreshold(1 - unmapped);
+                    arrowsToRemove.Add(arrow);
+                }
+            }
+
+            foreach (var arrow in arrowsToRemove)
+            {
+                arrows.Remove(arrow);
+            }
         }
     }
 }

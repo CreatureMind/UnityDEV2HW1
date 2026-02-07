@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class ArrowMovement : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     public int speed;
+    [HideInInspector] public Direction direction;
     private Camera cam;
-    private Direction direction;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
