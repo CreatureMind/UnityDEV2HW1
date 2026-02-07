@@ -42,6 +42,7 @@ public class ScoreManager : Singleton<ScoreManager>
     private TextEffectData _comboLostEffect;
 
     public UnityEvent<int> OnScoreChangedEvent;
+    public UnityEvent<int> OnComboChangedEvent;
 
     private int _currentScore;
     public int CurrentScore
@@ -126,5 +127,7 @@ public class ScoreManager : Singleton<ScoreManager>
         
         _comboText.text = _currentCombo.ToString();
         _comboText.PlayTextEffect(_currentCombo == 0 ? _comboLostEffect : _comboStreakEffect);
+
+        OnComboChangedEvent.Invoke(_currentCombo);
     }
 }
