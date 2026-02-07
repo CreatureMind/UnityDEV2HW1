@@ -22,6 +22,7 @@ public class TomatoThrow : MonoBehaviour
         mainCam = Camera.main;
     }
 
+    [ContextMenu("Throw Tomato At Dancer")]
     public void ThrowTomatoAtDancer()
     {
         if (dancerCollider == null || tomatoPrefab == null)
