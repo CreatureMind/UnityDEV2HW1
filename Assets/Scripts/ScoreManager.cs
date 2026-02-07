@@ -48,10 +48,19 @@ public class ScoreManager : Singleton<ScoreManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isPressed)
+        if (Input.GetKeyDown(KeyCode.Space) && !isPressed)
         {
             isPressed = true;
             AddScore(3);
+        }
+        else
+        {
+            isPressed = false;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isPressed)
+        {
+            isPressed = true;
+            AddScore(0);
         }
         else
         {

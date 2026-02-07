@@ -29,7 +29,7 @@ public class AnimationController : MonoBehaviour
 
     private Coroutine fadeCoroutine;
 
-    private void Awake()
+    private void Start()
     {
         TomatoCollision.OnTomatoHit += TomatoHitPlayer;
         ScoreManager.Instance.OnComboChangedEvent.AddListener(OnComboChanged);
@@ -45,21 +45,21 @@ public class AnimationController : MonoBehaviour
                 animator.SetFloat(NormalDancingBlend, 0);
                 animator.SetBool(IsCrazyDancing, false);
                 break;
-
             case 1:
                 animator.SetBool(IsDancing, true);
                 break;
             case ComboNormalStart:
                 animator.SetBool(IsNormalDancing, true);
                 break;
-            case <ComboNormalEnd:
-                var scalarForNormalizing = ComboNormalEnd - ComboNormalStart;
-                var normalizedCombo = (combo - ComboNormalStart) / scalarForNormalizing; // Normalize combo to range [0, 1]
-                animator.SetFloat(NormalDancingBlend, normalizedCombo);
-                break;
             case ComboCrazyStart:
                 animator.SetBool(IsCrazyDancing, true);
                 break;
+        }
+        
+        if (combo >= ComboNormalStart && combo < ComboCrazyStart)
+        {
+            float blend = (float)(combo - ComboNormalStart) / (ComboNormalEnd - ComboNormalStart);
+            animator.SetFloat(NormalDancingBlend, blend);
         }
     }
 
