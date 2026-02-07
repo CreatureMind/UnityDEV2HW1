@@ -246,6 +246,33 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &675797694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1328596654842025962, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+  m_PrefabInstance: {fileID: 1030289688389118784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &675797697 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5754443527260739370, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+  m_PrefabInstance: {fileID: 1030289688389118784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &675797698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675797694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6ffb84665e7d3439c3c67eb5c4a1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationController
+  animator: {fileID: 675797697}
+  layerIndex: 1
+  initialWeight: 1
+  fadeOutDuration: 0.5
+  holdDuration: 0.5
 --- !u!1001 &1030289688389118784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,6 +281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818274691837709648, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1880857803469672474, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_Name
       value: HypnoDancer
@@ -301,7 +332,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1328596654842025962, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 675797698}
   m_SourcePrefab: {fileID: 100100000, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
