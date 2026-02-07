@@ -23,6 +23,7 @@ public class TomatoCollision : MonoBehaviour
 
     private IEnumerator SplashRoutine()
     {
+        hasCollided = false;
         rb.isKinematic = true;
         if (tomatoMesh) tomatoMesh.enabled = false;
         if (tomatoCollider) tomatoCollider.enabled = false;

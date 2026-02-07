@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7486244846383673562}
   - component: {fileID: 4052310116229238077}
   - component: {fileID: 4523397811799308421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tomato
   m_TagString: Toamto
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 581054812150641804}
@@ -167,6 +167,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 825979824213328340}
     m_Modifications:
     - target: {fileID: 4165185441735498212, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165185441735498212, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0017485
       objectReference: {fileID: 0}
@@ -216,19 +220,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5277935560180475085, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5277935560180475085, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
       propertyPath: InitialModule.startSizeY.scalar
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5277935560180475085, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
       propertyPath: InitialModule.startSizeZ.scalar
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9163709273316186869, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
       propertyPath: m_Name
       value: TomatoSplashVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163709273316186869, guid: 7e14787f14b0424478a93e7c2c844afe, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
