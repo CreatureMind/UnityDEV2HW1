@@ -54,7 +54,6 @@ public class PlayPauseParticleSystem_SMB : StateMachineBehaviour
     // OnStateMachineExit is called when exiting a state machine via its Exit Node
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("state exited");
         if (!particleSystemContainer)
         {
             particleSystemContainer = animator.gameObject.GetComponent<ParticleSystemContainer>();
