@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05aaefecbe53e404ab435526e9ecdaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoThrow
-  dancerCollider: {fileID: 1751599007}
+  dancerCollider: {fileID: 0}
   tomatoPrefab: {fileID: 1000013284424148, guid: b29c3addc4240254785fef8671d1291b, type: 3}
   throwForce: 15
   destroyTime: 5
@@ -355,25 +355,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: HypnoDancer
       objectReference: {fileID: 0}
-    - target: {fileID: 3329774927904928648, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3329774927904928648, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.026
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.085654795
-      objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000000016448496
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.454185
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -406,37 +398,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7262548621171423311, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1751599007}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
---- !u!1 &1751599006 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7262548621171423311, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
-  m_PrefabInstance: {fileID: 1751599005}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1751599007
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751599006}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.24756354, y: 0.64832306, z: 0.25781822}
-  m_Center: {x: 0.0047263205, y: 1.266193, z: 0.014975548}
 --- !u!1001 &5126737238042378659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,6 +408,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3886247362522486017, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886247362522486017, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5550305972070477893, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
