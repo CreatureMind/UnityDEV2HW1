@@ -1,3 +1,5 @@
+using System.Collections;
+using Arrows;
 using UnityEngine;
 
 public class TomatoThrow : MonoBehaviour
@@ -12,11 +14,13 @@ public class TomatoThrow : MonoBehaviour
     [Tooltip("How fast the tomato flies")]
     [SerializeField] private float throwForce = 15f;
 
-    [Tooltip("Time in seconds before tomato is destroyed")]
-    [SerializeField] private float destroyTime = 5f;
-
     private Camera mainCam;
 
+    void Awake()
+    {
+        ArrowGoal.OnMiss += ThrowTomatoAtDancer;
+    }
+    
     void Start()
     {
         mainCam = Camera.main;
@@ -55,4 +59,5 @@ public class TomatoThrow : MonoBehaviour
 
         return box.transform.TransformPoint(randomLocalPoint);
     }
+
 }

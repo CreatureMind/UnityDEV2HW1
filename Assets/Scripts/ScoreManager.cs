@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -42,6 +43,22 @@ public class ScoreManager : Singleton<ScoreManager>
     public UnityEvent<int> OnComboChangedEvent;
 
     private int _currentScore;
+
+    private bool isPressed;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isPressed)
+        {
+            isPressed = true;
+            AddScore(3);
+        }
+        else
+        {
+            isPressed = false;
+        }
+    }
+
     public int CurrentScore
     {
         get => _currentScore;
