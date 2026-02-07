@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!65 &38233828 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3897739564517655435, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+  m_PrefabInstance: {fileID: 1751599005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,8 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05aaefecbe53e404ab435526e9ecdaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoThrow
-  dancerCollider: {fileID: 0}
-  tomatoPrefab: {fileID: 1000013284424148, guid: b29c3addc4240254785fef8671d1291b, type: 3}
+  dancerCollider: {fileID: 38233828}
+  tomatoPrefab: {fileID: 8115858538124155615, guid: 4f204b3c9e969994f9c2146cb4074d37, type: 3}
   throwForce: 15
   destroyTime: 5
 --- !u!4 &766947562
@@ -355,17 +360,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: HypnoDancer
       objectReference: {fileID: 0}
-    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+    - target: {fileID: 3329774927904928648, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+    - target: {fileID: 3329774927904928648, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.y
+      value: -1.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897739564517655435, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.085654795
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000000016448496
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.454185
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -408,14 +425,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3886247362522486017, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3886247362522486017, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5550305972070477893, guid: 968fb322a9c61214eb946decd913ba20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
