@@ -4,7 +4,7 @@ public class TomatoThrow : MonoBehaviour
 {
 [Header("Settings")]
     [Tooltip("The MeshCollider of the dancer")]
-    [SerializeField] private MeshCollider dancerCollider;
+    [SerializeField] private BoxCollider dancerCollider;
 
     [Tooltip("The tomato prefab (Must have Rigidbody)")]
     [SerializeField] private GameObject tomatoPrefab;
@@ -30,7 +30,7 @@ public class TomatoThrow : MonoBehaviour
             return;
         }
 
-        Vector3 targetPoint = GetRandomPointOnMesh();
+        Vector3 targetPoint = GetRandomPointInBox(dancerCollider);
         Vector3 spawnPos = mainCam.transform.position + (mainCam.transform.forward * 1f); 
         GameObject newTomato = Instantiate(tomatoPrefab, spawnPos, Quaternion.identity);
         Vector3 direction = (targetPoint - spawnPos).normalized;
@@ -41,16 +41,17 @@ public class TomatoThrow : MonoBehaviour
         }
     }
 
-    private Vector3 GetRandomPointOnMesh()
+    private Vector3 GetRandomPointInBox(BoxCollider box)
     {
-        Mesh mesh = dancerCollider.sharedMesh;
-        
-        int randomVertexIndex = Random.Range(0, mesh.vertices.Length);
-        
-        Vector3 localPoint = mesh.vertices[randomVertexIndex];
+        Vector3 center = box.center;
+        Vector3 extents = box.size * 0.5f;
 
-        Vector3 worldPoint = dancerCollider.transform.TransformPoint(localPoint);
+        Vector3 randomLocalPoint = new Vector3(
+            Random.Range(center.x - extents.x, center.x + extents.x),
+            Random.Range(center.y - extents.y, center.y + extents.y),
+            Random.Range(center.z - extents.z, center.z + extents.z)
+        );
 
-        return worldPoint;
+        return box.transform.TransformPoint(randomLocalPoint);
     }
 }
