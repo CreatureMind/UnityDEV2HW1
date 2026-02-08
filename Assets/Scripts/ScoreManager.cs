@@ -22,24 +22,22 @@ public class ScoreManager : Singleton<ScoreManager>
     protected override bool DontDestoryOnLoad => false;
 
     [SerializeField]
-    private TextMeshProUGUI _scoreText;
-    [SerializeField]
-    private TextMeshProUGUI _comboText;
-
-    [SerializeField]
     private List<ScoreRangeData> _scoreData;
     [SerializeField, Tooltip("If no data is recieved for a score this is the default it would pick")]
     private ScoreRangeData _falloffData;
 
     [SerializeField]
     private TextEffectData _comboStreakEffect;
+    public TextEffectData ComboStreakEffect => _comboStreakEffect;
     [SerializeField]
     private TextEffectData _comboLostEffect;
+    public TextEffectData ComboLostEffect => _comboLostEffect;
 
     [SerializeField]
     private int _mostPreciseScore;
 
     public UnityEvent<int> OnScoreChangedEvent;
+    public UnityEvent<int> OnHitEvent;
     public UnityEvent<int> OnComboChangedEvent;
 
     private int _currentScore;
@@ -104,8 +102,8 @@ public class ScoreManager : Singleton<ScoreManager>
             CurrentCombo = 0;
 
         CurrentScore += amount + CurrentCombo;
-        
-        RunScoreEffects(amount);
+
+        OnHitEvent?.Invoke(amount);
     }
 
     protected override void OnSingletonCreated()
@@ -138,27 +136,12 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         _currentScore = score;
 
-        _scoreText.text = _currentScore.ToString();
-    }
-
-    private void RunScoreEffects(int scoreAdded)
-    {        
         OnScoreChangedEvent?.Invoke(_currentScore);
-
-        var currScoreData = GetDataForScore(scoreAdded);
-        if (currScoreData == null) return;
-
-        CameraShaker.Instance.Shake(currScoreData.shakeData);
-
-        _scoreText.PlayTextEffect(currScoreData.scoreTextEffectData);
     }
 
     private void OnComboChanged(int value)
     {
         _currentCombo = value;
-        
-        _comboText.text = _currentCombo.ToString();
-        _comboText.PlayTextEffect(_currentCombo == 0 ? _comboLostEffect : _comboStreakEffect);
 
         OnComboChangedEvent.Invoke(_currentCombo);
     }
