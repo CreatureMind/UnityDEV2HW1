@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public int speed;
+    [HideInInspector] public float speed;
     [HideInInspector] public Direction direction;
     private Camera cam;
     

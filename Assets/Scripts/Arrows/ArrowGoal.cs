@@ -15,6 +15,7 @@ namespace Arrows
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log(collision.gameObject.name);
             if (collision.gameObject.CompareTag("Arrow"))
             {
                 arrows.Add(collision.GetComponent<Arrow>());
@@ -25,6 +26,8 @@ namespace Arrows
         {
             if (collision.gameObject.CompareTag("Arrow"))
             {
+                arrows.Remove(collision.GetComponent<Arrow>());
+                ScoreManager.Instance.SendThreshold(0);
                 OnMiss?.Invoke();
             }
         }
@@ -65,7 +68,8 @@ namespace Arrows
                 OnMiss?.Invoke();
             }
 
-            HashSet<Arrow> arrowsToRemove = new HashSet<Arrow>();
+            HashSet<Arrow> missedArrows = new HashSet<Arrow>();
+            HashSet<Arrow> successfulArrows = new HashSet<Arrow>();
             foreach (var arrow in arrows)
             {
                 if(direction != arrow.direction)
@@ -77,18 +81,25 @@ namespace Arrows
                 {
                     ScoreManager.Instance.SendThreshold(0);
                     OnMiss?.Invoke();
-                    arrowsToRemove.Add(arrow);
+                    missedArrows.Add(arrow);
                 }
                 else
                 {
+                    Debug.Log(1 - unmapped);
                     ScoreManager.Instance.SendThreshold(1 - unmapped);
-                    arrowsToRemove.Add(arrow);
+                    successfulArrows.Add(arrow);
                 }
             }
 
-            foreach (var arrow in arrowsToRemove)
+            foreach (var arrow in missedArrows)
             {
                 arrows.Remove(arrow);
+            }
+            
+            foreach (var arrow in successfulArrows)
+            {
+                arrows.Remove(arrow);
+                Destroy(arrow.gameObject);
             }
         }
     }
