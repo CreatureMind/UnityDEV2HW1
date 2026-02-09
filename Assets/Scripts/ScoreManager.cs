@@ -95,7 +95,7 @@ public class ScoreManager : Singleton<ScoreManager>
         for (int i = 0; i < _scoreData.Count; i++)
         {
             int nextIndex = i + 1;
-            if (nextIndex == _scoreData.Count) return _scoreData[i].anyAbove >= score ? _scoreData[i] : _falloffData;
+            if (nextIndex == _scoreData.Count) return _scoreData[i].anyAbove <= score ? _scoreData[i] : _falloffData;
 
             if (score >= _scoreData[i].anyAbove && score < _scoreData[nextIndex].anyAbove)
                 return _scoreData[i];

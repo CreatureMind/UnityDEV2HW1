@@ -3,13 +3,13 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
-public static class TextMeshProUGUIExtensions
+public static class TMP_TextExtensions
 {
-    private static readonly Dictionary<TextMeshProUGUI, Vector3> BaseScales = new();
-    private static readonly Dictionary<TextMeshProUGUI, Color> BaseColors = new();
-    private static readonly Dictionary<TextMeshProUGUI, Vector3> BasePositions = new();
+    private static readonly Dictionary<TMP_Text, Vector3> BaseScales = new();
+    private static readonly Dictionary<TMP_Text, Color> BaseColors = new();
+    private static readonly Dictionary<TMP_Text, Vector3> BasePositions = new();
 
-    public static void PlayTextEffect(this TextMeshProUGUI text, TextEffectData effectData)
+    public static void PlayTextEffect(this TMP_Text text, TextEffectData effectData)
     {
         var t = text.transform;
 

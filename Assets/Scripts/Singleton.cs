@@ -9,6 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
         {
             if (_instance == null)
             {
+                if (_quitting) return null;
                 var createdSingleton = new GameObject().AddComponent<T>();
                 if (!createdSingleton.DontDestoryOnLoad)
                 {
@@ -22,6 +23,8 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
             return _instance;
         }
     }
+
+    private static bool _quitting;
 
     protected virtual bool DontDestoryOnLoad => true;
     protected virtual string SingletonObjName => typeof(T).Name;
@@ -49,4 +52,9 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     }
 
     protected virtual void OnSingletonCreated(){}
+
+    void OnApplicationQuit()
+    {
+        _quitting = true;
+    }
 }

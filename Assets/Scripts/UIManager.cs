@@ -31,12 +31,9 @@ public class UIManager : MonoBehaviour
 
     void OnDisable()
     {
-        if (Application.isPlaying)
-        {
-            ScoreManager.Instance.OnScoreChangedEvent.RemoveListener(ChangeScore);
-            ScoreManager.Instance.OnHitEvent.RemoveListener(ChangeCompliment);
-            ScoreManager.Instance.OnComboChangedEvent.RemoveListener(ChangeCombo);
-        }
+        ScoreManager.Instance?.OnScoreChangedEvent.RemoveListener(ChangeScore);
+        ScoreManager.Instance?.OnHitEvent.RemoveListener(ChangeCompliment);
+        ScoreManager.Instance?.OnComboChangedEvent.RemoveListener(ChangeCombo);
     }
 
     private void ChangeScore(int score)
@@ -49,8 +46,10 @@ public class UIManager : MonoBehaviour
         var scoreDate = ScoreManager.Instance.GetDataForScore(score);
         if (scoreDate == null) return;
 
+        scoreNumText.PlayTextEffect(scoreDate.scoreTextEffectData);
+
         CameraShaker.Instance.Shake(scoreDate.shakeData);
-        Debug.Log(scoreDate.hitType + " " + score);
+        
         foreach (var comp in compliments)
         {
             var isMatch = comp.type == scoreDate.hitType;
