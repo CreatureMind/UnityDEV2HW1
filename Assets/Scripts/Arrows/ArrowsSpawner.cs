@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
@@ -19,28 +20,35 @@ public class ArrowsSpawner : MonoBehaviour
     private AudioClip song;
     private int BPM;
     private ArrowStep[] steps;
-    public float distanceToGoal;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private float preSongDelay;
+    private float distanceToGoal;
+    private float arrowSpeed;
+    private float arrowSpeedScaleFactor;
+
+    public static event Action OnSongEnded;
+
+    void OnEnable()
     {
-        distanceToGoal = (transform.position - goalCollider.position).magnitude;
-        LoadSongData(spawnPattern);
-        
-        StartCoroutine(StartTrack());
+        Popup.OnSelected += LoadSongData;
+    }
+
+    void OnDisable()
+    {
+        Popup.OnSelected -= LoadSongData;
     }
 
     private void LoadSongData(DdrPattern pattern)
     {
+        distanceToGoal = (transform.position - goalCollider.position).magnitude;
+        arrowSpeed = distanceToGoal / scrollTime;
+        
         song = SoundManager.instance.GetAudioClip(pattern.songName);
+        preSongDelay = pattern.delay;
+        arrowSpeedScaleFactor = pattern.arrowSpeedScaleFactor;
         BPM = pattern.bpm;
         steps = pattern.steps;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        
+        StartCoroutine(StartTrack());
     }
 
     private void SpawnArrow(ArrowStep step)
@@ -69,24 +77,32 @@ public class ArrowsSpawner : MonoBehaviour
             }
             
             arrow.transform.localPosition = Vector3.zero;
-            arrow.speed = distanceToGoal / scrollTime;
+            arrow.speed = arrowSpeed;
         }
     }
 
     private IEnumerator StartTrack()
     {
-        var songLengthInSeconds =  song.length;
-        var beatsPerSeconds = BPM / 60f;
+        var songLengthInSeconds =  song.length - preSongDelay - preSongDelay;
         var secondsPerBeat = 60f / BPM;
-        var secondsPerMeasure = secondsPerBeat * 4;
-        var totalMeasures = (songLengthInSeconds * BPM) / 240;
 
-        foreach (var step in steps)
+        yield return new WaitForSeconds(preSongDelay);
+
+        while (songLengthInSeconds > 0)
         {
-            SpawnArrow(step);
-            yield return new WaitForSeconds(secondsPerBeat);
+            foreach (var step in steps)
+            {
+                if (songLengthInSeconds <= 0) break;
+                SpawnArrow(step);
+                yield return new WaitForSeconds(secondsPerBeat);
+                arrowSpeed += arrowSpeedScaleFactor;
+                songLengthInSeconds -= secondsPerBeat;
+            }
         }
-
+        
+        yield return new WaitForSeconds(preSongDelay);
+        
+        OnSongEnded?.Invoke();
     }
 }
 

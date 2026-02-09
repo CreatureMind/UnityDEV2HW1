@@ -29,6 +29,8 @@ namespace ScriptableObjects
     {
         public string songName;
         public int bpm;
+        public float delay;
+        public float arrowSpeedScaleFactor;
         public ArrowStep[] steps;
     }
 }

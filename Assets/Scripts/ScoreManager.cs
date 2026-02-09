@@ -73,7 +73,7 @@ public class ScoreManager : Singleton<ScoreManager>
         else if (CurrentCombo != 0)
             CurrentCombo = 0;
 
-        CurrentScore += amount + CurrentCombo;
+        CurrentScore += amount * CurrentCombo;
 
         OnHitEvent?.Invoke(amount);
     }

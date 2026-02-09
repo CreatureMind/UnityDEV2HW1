@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _scoreData:
-  - anyAbove: 1
+  - anyAbove: 10
     hitType: 1
     shakeData:
-      duration: 0.2
+      duration: 0.1
       strength: 0.1
       vibrato: 10
       randomness: 90
@@ -60,7 +60,7 @@ MonoBehaviour:
       scaleExtra: 0
       scaleMulti: 1.2
       useColor: 1
-      pulseColor: {r: 0.7353695, g: 1, b: 0.5801887, a: 1}
+      pulseColor: {r: 0.22352943, g: 0.67058825, b: 0.7019608, a: 1}
       useShake: 0
       shakeData:
         duration: 0
@@ -69,11 +69,11 @@ MonoBehaviour:
         randomness: 90
         fadeOut: 1
         randomnessMode: 0
-  - anyAbove: 25
+  - anyAbove: 50
     hitType: 2
     shakeData:
-      duration: 0.2
-      strength: 0.2
+      duration: 0.1
+      strength: 0.1
       vibrato: 20
       randomness: 90
       fadeOut: 1
@@ -84,7 +84,7 @@ MonoBehaviour:
       scaleExtra: 0
       scaleMulti: 1.3
       useColor: 1
-      pulseColor: {r: 0.9861675, g: 1, b: 0.4669811, a: 1}
+      pulseColor: {r: 0.28235295, g: 0.9450981, b: 0.3137255, a: 1}
       useShake: 1
       shakeData:
         duration: 0.2
@@ -93,11 +93,11 @@ MonoBehaviour:
         randomness: 90
         fadeOut: 1
         randomnessMode: 0
-  - anyAbove: 60
+  - anyAbove: 85
     hitType: 3
     shakeData:
-      duration: 0.2
-      strength: 0.3
+      duration: 0.1
+      strength: 0.1
       vibrato: 30
       randomness: 90
       fadeOut: 1
@@ -108,7 +108,7 @@ MonoBehaviour:
       scaleExtra: 0
       scaleMulti: 1.3
       useColor: 1
-      pulseColor: {r: 1, g: 0.4666667, b: 0.88748145, a: 1}
+      pulseColor: {r: 0.9803922, g: 0.86274517, b: 0.16862746, a: 1}
       useShake: 1
       shakeData:
         duration: 0.2
@@ -117,11 +117,11 @@ MonoBehaviour:
         randomness: 90
         fadeOut: 1
         randomnessMode: 0
-  - anyAbove: 85
+  - anyAbove: 95
     hitType: 4
     shakeData:
-      duration: 0.2
-      strength: 0.35
+      duration: 0.1
+      strength: 0.1
       vibrato: 40
       randomness: 90
       fadeOut: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
       scaleExtra: 0
       scaleMulti: 1.45
       useColor: 1
-      pulseColor: {r: 0.35534585, g: 1, b: 0.8365525, a: 1}
+      pulseColor: {r: 0.7607844, g: 0.12941177, b: 0.9490197, a: 1}
       useShake: 1
       shakeData:
         duration: 0.2
@@ -145,8 +145,8 @@ MonoBehaviour:
     anyAbove: 0
     hitType: 0
     shakeData:
-      duration: 0
-      strength: 3
+      duration: 0.1
+      strength: 0.1
       vibrato: 10
       randomness: 90
       fadeOut: 1
@@ -157,11 +157,11 @@ MonoBehaviour:
       scaleExtra: 0
       scaleMulti: 0.8
       useColor: 1
-      pulseColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
+      pulseColor: {r: 0.8627452, g: 0.07843138, b: 0.2352941, a: 1}
       useShake: 0
       shakeData:
         duration: 0
-        strength: 3
+        strength: 1
         vibrato: 10
         randomness: 90
         fadeOut: 1

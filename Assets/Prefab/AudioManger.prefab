@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   sounds:
-  - name: Music - Rasputin
+  - name: RASPUTIN
     clip: {fileID: 8300000, guid: 9b9a57785fff11d4c8972bb3509825fd, type: 3}
     volume: 1
     pitch: 1

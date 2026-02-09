@@ -91,7 +91,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowMovement
   speed: 300
+  isSuccessful: 0
   direction: 0
+  image: {fileID: 6825809940640691707}
+  cycleDuration: 1.5
 --- !u!61 &167188765155417303
 BoxCollider2D:
   m_ObjectHideFlags: 0
