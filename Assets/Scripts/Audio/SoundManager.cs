@@ -1,4 +1,5 @@
 using System;
+using ScriptableObjects;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -28,7 +29,13 @@ public class SoundManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playOnAwake;
 
-        }
+        } 
+        DifficultyPopupManager.OnSelected += PlayMainTheme;
+    }
+
+    private void PlayMainTheme(DdrPattern obj)
+    {
+        PlayMusic("RASPUTIN");
     }
 
     public AudioClip GetAudioClip(string name)

@@ -29,12 +29,12 @@ public class ArrowsSpawner : MonoBehaviour
 
     void OnEnable()
     {
-        Popup.OnSelected += LoadSongData;
+        DifficultyPopupManager.OnSelected += LoadSongData;
     }
 
     void OnDisable()
     {
-        Popup.OnSelected -= LoadSongData;
+        DifficultyPopupManager.OnSelected -= LoadSongData;
     }
 
     private void LoadSongData(DdrPattern pattern)

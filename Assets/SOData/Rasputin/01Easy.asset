@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01Easy
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.DdrPattern
   songName: RASPUTIN
-  bpm: 126
+  bpm: 156
   delay: 10
   arrowSpeedScaleFactor: 0.001
   steps:

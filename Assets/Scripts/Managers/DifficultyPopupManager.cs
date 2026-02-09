@@ -3,7 +3,7 @@ using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Popup : MonoBehaviour
+public class DifficultyPopupManager : MonoBehaviour
 {
     [SerializeField] private GameObject parent;
 
@@ -18,6 +18,7 @@ public class Popup : MonoBehaviour
     public void OnSelectedPressed(DdrPattern pattern)
     {
         OnSelected?.Invoke(pattern);
+        SoundManager.instance.PlayMusic("RASPUTIN");
         Time.timeScale = 1;
         parent.SetActive(false);
     }
