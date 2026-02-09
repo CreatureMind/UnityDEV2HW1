@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Arrows
 {
@@ -11,66 +10,52 @@ namespace Arrows
         [SerializeField] private float threshold;
         
         public static event Action OnMiss;
-        private readonly List<Arrow> arrows = new();
+        private readonly List<Arrow> _arrows = new();
+
+        void OnEnable()
+        {
+            InputHandler.OnPress += CheckThreshold;
+        }
+
+        void OnDisable()
+        {
+            InputHandler.OnPress -= CheckThreshold;
+        }
         
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log(collision.gameObject.name);
-            if (collision.gameObject.CompareTag("Arrow"))
+            var currentArrow = collision.GetComponent<Arrow>();
+            if (currentArrow)
             {
-                arrows.Add(collision.GetComponent<Arrow>());
+                _arrows.Add(currentArrow);
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Arrow"))
+            var currentArrow = collision.GetComponent<Arrow>();
+            
+            if (currentArrow)
             {
-                arrows.Remove(collision.GetComponent<Arrow>());
+                if(currentArrow.isSuccessful)
+                    return;
+                
+                _arrows.Remove(currentArrow);
                 ScoreManager.Instance.SendThreshold(0);
                 OnMiss?.Invoke();
             }
-        }
-
-        public void OnPressLeft(InputAction.CallbackContext context)
-        {
-            Debug.Log("PressLeft");
-            if (context.performed)
-                CheckThreshold(Direction.Left);
-        }
-        
-        public void OnPressDown(InputAction.CallbackContext context)
-        {
-            Debug.Log("PressDown");
-            if (context.performed)
-                CheckThreshold(Direction.Down);
-        }
-        
-        public void OnPressUp(InputAction.CallbackContext context)
-        {
-            Debug.Log("PressUp");
-            if (context.performed)
-                CheckThreshold(Direction.Up);
-        }
-        
-        public void OnPressRight(InputAction.CallbackContext context)
-        {
-            Debug.Log("PressRight");
-            if (context.performed)
-                CheckThreshold(Direction.Right);
         }
         
         private void CheckThreshold(Direction direction)
         {
-            if (arrows.Count == 0)
+            if (_arrows.Count == 0)
             {
                 ScoreManager.Instance.SendThreshold(0);
                 OnMiss?.Invoke();
             }
 
-            HashSet<Arrow> missedArrows = new HashSet<Arrow>();
-            HashSet<Arrow> successfulArrows = new HashSet<Arrow>();
-            foreach (var arrow in arrows)
+            HashSet<Arrow> arrowToRemove = new();
+            foreach (var arrow in _arrows)
             {
                 if(direction != arrow.direction)
                     continue;
@@ -81,25 +66,22 @@ namespace Arrows
                 {
                     ScoreManager.Instance.SendThreshold(0);
                     OnMiss?.Invoke();
-                    missedArrows.Add(arrow);
+                    arrowToRemove.Add(arrow);
+                    arrow.isSuccessful = false;
                 }
                 else
                 {
-                    Debug.Log(1 - unmapped);
                     ScoreManager.Instance.SendThreshold(1 - unmapped);
-                    successfulArrows.Add(arrow);
+                    arrowToRemove.Add(arrow);
+                    arrow.isSuccessful = true;
                 }
             }
 
-            foreach (var arrow in missedArrows)
+            foreach (var arrow in arrowToRemove)
             {
-                arrows.Remove(arrow);
-            }
-            
-            foreach (var arrow in successfulArrows)
-            {
-                arrows.Remove(arrow);
-                Destroy(arrow.gameObject);
+                _arrows.Remove(arrow);
+                if(arrow.isSuccessful)
+                    Destroy(arrow.gameObject);
             }
         }
     }
