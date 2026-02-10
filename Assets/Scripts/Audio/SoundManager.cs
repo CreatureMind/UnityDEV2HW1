@@ -30,12 +30,6 @@ public class SoundManager : MonoBehaviour
             s.source.playOnAwake = s.playOnAwake;
 
         } 
-        DifficultyPopupManager.OnSelected += PlayMainTheme;
-    }
-
-    private void PlayMainTheme(DdrPattern obj)
-    {
-        PlayMusic("RASPUTIN");
     }
 
     public AudioClip GetAudioClip(string name)
@@ -75,8 +69,9 @@ public class SoundManager : MonoBehaviour
                 print("Sound" + name + "not found");
                 return;
             }
-            s.source.Stop();
         }
+        
+        s.source.Stop();
     }
     public void PlayMusic(string name)
     {
@@ -100,8 +95,9 @@ public class SoundManager : MonoBehaviour
                 print("Sound" + name + "not found");
                 return;
             }
-            s.source.Stop();
         }
+        
+        s.source.Stop();
     }
 
 }

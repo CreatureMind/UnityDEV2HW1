@@ -3467,7 +3467,5 @@ MonoBehaviour:
   spawnDown: {fileID: 5213853071921837451}
   spawnUp: {fileID: 4764167488269334915}
   spawnRight: {fileID: 1552270130307385387}
-  spawnPattern: {fileID: 11400000, guid: fc3f34e597ff1864dbfbbffdf1410eab, type: 2}
-  scrollTime: 1.5
+  scrollTime: 1.555
   goalCollider: {fileID: 1710006252142858943}
-  distanceToGoal: 0

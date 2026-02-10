@@ -13,10 +13,10 @@ public class ArrowsSpawner : MonoBehaviour
     [SerializeField] private Transform spawnUp;
     [SerializeField] private Transform spawnRight;
     
-    [SerializeField] private DdrPattern spawnPattern;
     [SerializeField, Range(1,3)] private float scrollTime; //GD number in seconds
     [SerializeField] private Transform goalCollider;
     
+    private DdrPattern currentPattern;
     private AudioClip song;
     private int BPM;
     private ArrowStep[] steps;
@@ -25,7 +25,7 @@ public class ArrowsSpawner : MonoBehaviour
     private float arrowSpeed;
     private float arrowSpeedScaleFactor;
 
-    public static event Action OnSongEnded;
+    public static event Action<DdrPattern> OnSongEnded;
 
     void OnEnable()
     {
@@ -39,6 +39,8 @@ public class ArrowsSpawner : MonoBehaviour
 
     private void LoadSongData(DdrPattern pattern)
     {
+        currentPattern = pattern;
+        
         distanceToGoal = (transform.position - goalCollider.position).magnitude;
         arrowSpeed = distanceToGoal / scrollTime;
         
@@ -102,7 +104,7 @@ public class ArrowsSpawner : MonoBehaviour
         
         yield return new WaitForSeconds(preSongDelay);
         
-        OnSongEnded?.Invoke();
+        OnSongEnded?.Invoke(currentPattern);
     }
 }
 

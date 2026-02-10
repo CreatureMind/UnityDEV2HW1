@@ -18,14 +18,15 @@ public class DifficultyPopupManager : MonoBehaviour
     public void OnSelectedPressed(DdrPattern pattern)
     {
         OnSelected?.Invoke(pattern);
-        SoundManager.instance.PlayMusic("RASPUTIN");
+        SoundManager.instance.PlayMusic(pattern.songName);
         Time.timeScale = 1;
         parent.SetActive(false);
     }
 
-    public void OnGameOver()
+    private void OnGameOver(DdrPattern pattern)
     {
         Time.timeScale = 0;
+        SoundManager.instance.StopMusic(pattern.songName);
         parent.SetActive(true);
     }
     
