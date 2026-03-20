@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
     public static event Action<Direction> OnPress;
+    public static event Action OnEscapePress;
     
     public void OnPressLeft(InputAction.CallbackContext context)
     {
@@ -28,5 +29,11 @@ public class InputHandler : MonoBehaviour
     {
         if (context.started)
             OnPress?.Invoke(Direction.Right);
+    }
+    
+    public void OnPressEscape(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            OnEscapePress?.Invoke();
     }
 }
