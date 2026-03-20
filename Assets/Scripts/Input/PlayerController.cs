@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
-
         if (agent.remainingDistance > agent.stoppingDistance)
         {
-            character.Move();
+            float speedForAnimation = agent.velocity.magnitude;
+            character.Move(speedForAnimation);
         }
         else
         {
