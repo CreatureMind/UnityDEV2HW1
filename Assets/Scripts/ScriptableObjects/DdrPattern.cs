@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace ScriptableObjects
 {
@@ -27,9 +28,9 @@ namespace ScriptableObjects
     [CreateAssetMenu(fileName = "NewPattern", menuName = "DDR/Pattern")]
     public class DdrPattern : ScriptableObject
     {
-        public string songName;
-        public int bpm;
         public float delay;
+        [Range(1f, 50f)] public float gain;
+        [Range(1f, 50f)] public float penalty;
         public float arrowSpeedScaleFactor;
         public ArrowStep[] steps;
     }

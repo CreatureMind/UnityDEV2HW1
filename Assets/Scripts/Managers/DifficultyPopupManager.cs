@@ -17,15 +17,14 @@ public class DifficultyPopupManager : MonoBehaviour
     public void OnSelectedPressed(DdrPattern pattern)
     {
         OnSelected?.Invoke(pattern);
-        SoundManager.instance.PlayMusic(pattern.songName);
+
         Time.timeScale = 1;
         parent.SetActive(false);
     }
 
-    private void OnGameOver(DdrPattern pattern)
+    private void GameOver()
     {
         Time.timeScale = 0;
-        SoundManager.instance.StopMusic(pattern.songName);
         parent.SetActive(true);
     }
     
