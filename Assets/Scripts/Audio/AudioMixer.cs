@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudiMixer : MonoBehaviour
+public class SoundMixer : MonoBehaviour
 {
-    public static AudioMixer Instance { get; private set; }
+    public static SoundMixer Instance { get; private set; }
 
     [SerializeField] private AudioMixer mainMixer;
 
