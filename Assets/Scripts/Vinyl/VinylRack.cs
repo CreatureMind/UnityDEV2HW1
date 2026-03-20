@@ -125,5 +125,12 @@ namespace Vinyl
                 OnSelected?.Invoke();
             }
         }
+        
+        private void OnEscape()
+        {
+            selectCam.Priority = 0;
+            _isClicked = false;
+            OnSelected?.Invoke();
+        }
     }
 }
