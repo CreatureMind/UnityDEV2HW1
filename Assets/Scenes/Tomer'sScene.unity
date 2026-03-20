@@ -511,40 +511,6 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
   m_PrefabInstance: {fileID: 1727003825}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1359063476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359063472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StarterAssets.ThirdPersonController
-  MoveSpeed: 2
-  SprintSpeed: 5.335
-  RotationSmoothTime: 0.12
-  SpeedChangeRate: 10
-  LandingAudioClip: {fileID: 0}
-  FootstepAudioClips: []
-  FootstepAudioVolume: 0.5
-  JumpHeight: 1.2
-  Gravity: -15
-  JumpTimeout: 0.5
-  FallTimeout: 0.15
-  Grounded: 1
-  GroundedOffset: -0.14
-  GroundedRadius: 0.28
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  CinemachineCameraTarget: {fileID: 1359063472}
-  TopClamp: 70
-  BottomClamp: -30
-  CameraAngleOverride: 0
-  LockCameraPosition: 0
 --- !u!114 &1359063477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,10 +576,10 @@ Animator:
   m_GameObject: {fileID: 1359063472}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6372921481a5e5a43974c98625f65bbd, type: 3}
-  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3637d5e7cd60482409e4a9ef4fcdcec1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 1
@@ -622,6 +588,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1359063480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359063472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3464e531c693cdd4ba2b1cc9190e33da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationControllerMovement
 --- !u!1001 &1721238202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,15 +678,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_Speed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
+      propertyPath: m_Acceleration
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_AngularSpeed
-      value: 120
+      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_StoppingDistance
@@ -740,7 +722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.13
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -789,7 +771,7 @@ PrefabInstance:
     - target: {fileID: 9197455217558482985, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 1359063476}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -802,10 +784,10 @@ PrefabInstance:
       addedObject: {fileID: 1359063477}
     - targetCorrespondingSourceObject: {fileID: 1880857803469672474, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1359063476}
+      addedObject: {fileID: 1359063479}
     - targetCorrespondingSourceObject: {fileID: 1880857803469672474, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1359063479}
+      addedObject: {fileID: 1359063480}
   m_SourcePrefab: {fileID: 100100000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
 --- !u!1 &1733487121 stripped
 GameObject:

@@ -1,9 +1,7 @@
-using System;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
-using static StarterAssets.ThirdPersonController;
 
 public class PlayerController : MonoBehaviour
 {
