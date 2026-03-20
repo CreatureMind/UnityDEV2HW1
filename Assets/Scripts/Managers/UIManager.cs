@@ -4,8 +4,9 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UI.Base;
 
-public class UIManager : MonoBehaviour
+public class UIManager : BaseMenu
 {
     [Header("Score")]
     [SerializeField] private TMP_Text scoreText;
@@ -42,6 +43,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        
         foreach (var comp in compliments)
         {
             _originalScales[comp.image] = comp.image.localScale;
@@ -112,6 +114,21 @@ public class UIManager : MonoBehaviour
                 _spawnedDigits[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public override void ShowMenu()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public override void HideMenu()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public override void EscapePressed()
+    {
+        UI_Manager.Instance.SwapMenu(MenuType.PauseMenu);
     }
 }
 

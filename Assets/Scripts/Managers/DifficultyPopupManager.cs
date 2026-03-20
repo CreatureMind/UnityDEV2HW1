@@ -12,7 +12,6 @@ public class DifficultyPopupManager : MonoBehaviour
     void OnEnable()
     {
         Time.timeScale = 0;
-        ArrowsSpawner.OnSongEnded += OnGameOver;
     }
 
     public void OnSelectedPressed(DdrPattern pattern)
