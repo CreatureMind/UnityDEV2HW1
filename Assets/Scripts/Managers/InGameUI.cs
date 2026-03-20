@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UI.Base;
 
-public class UIManager : BaseMenu
+public class InGameUI : BaseMenu
 {
     [Header("Score")]
     [SerializeField] private TMP_Text scoreText;
@@ -118,12 +118,12 @@ public class UIManager : BaseMenu
 
     public override void ShowMenu()
     {
-        gameObject.SetActive(true);
+        canvasGroup.alpha = 1;
     }
 
     public override void HideMenu()
     {
-        gameObject.SetActive(false);
+        canvasGroup.alpha = 0.5f;
     }
 
     public override void EscapePressed()

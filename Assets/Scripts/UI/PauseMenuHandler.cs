@@ -11,7 +11,6 @@ namespace UI
     {
         [Header("Transform")]
         [SerializeField] private RectTransform menuTransform;
-        [SerializeField] private CanvasGroup canvasGroup;
         
         [Header("Buttons")]
         [SerializeField] private Button resumeButton;

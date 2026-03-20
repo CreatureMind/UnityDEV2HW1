@@ -5,7 +5,8 @@ namespace UI.Base
 {
     public abstract class BaseMenu : MonoBehaviour
     {
-        [SerializeField] private MenuType thisMenuType;
+        [SerializeField] protected MenuType thisMenuType;
+        [SerializeField] protected CanvasGroup canvasGroup;
 
         public static Action<MenuType> OnMenuOpened;
     
