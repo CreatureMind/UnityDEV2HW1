@@ -14,7 +14,7 @@ public class SongSO : ScriptableObject
     public float pitch = 1f;
     public bool loop;
     public bool playOnAwake = true;
-    [Range(120,300)]
+    [Range(60,300)]
     public int bpm;
     public DdrPatternSO[] patterns;
 }
