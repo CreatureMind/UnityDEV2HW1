@@ -17,6 +17,8 @@ public class ArrowsSpawner : MonoBehaviour
     [SerializeField] private Transform goalCollider;
     
     private DdrPatternSO _currentPatternSo;
+    private string songID;
+    private int songDifficulty;
     private string songName;
     private float songLength;
     private int BPM;
@@ -51,6 +53,8 @@ public class ArrowsSpawner : MonoBehaviour
     {
         var currentPattern = songSo.patterns[difficulty];
         
+        songID = songSo.songID;
+        songDifficulty = difficulty;
         songName = songSo.songName;
         songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
         perPatternDelay = currentPattern.delay;
@@ -114,6 +118,8 @@ public class ArrowsSpawner : MonoBehaviour
         
         SoundManager.instance.StopMusic(songName);
         yield return new WaitForSeconds(perPatternDelay);
+
+        ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
         
         OnSongEnded?.Invoke();
     }

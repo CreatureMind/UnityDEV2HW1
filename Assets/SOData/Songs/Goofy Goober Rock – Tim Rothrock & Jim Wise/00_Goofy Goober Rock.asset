@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0ec16e8adccbf409a0961a031f9bd8, type: 3}
   m_Name: 00_Goofy Goober Rock
   m_EditorClassIdentifier: Assembly-CSharp::Song
-  preview: {fileID: 21300000, guid: 94b03c9020c031d48abdf402ef38963c, type: 3}
+  songID: goofy_goober_rock
   songName: Goofy Goober Rock
-  audioClip: {fileID: 8300000, guid: 163f6a52bb6ba5c4f8e864355867cec3, type: 3}
+  preview: {fileID: 21300000, guid: 94b03c9020c031d48abdf402ef38963c, type: 3}
+  audioClipNormal: {fileID: 0}
+  audioClipMeme: {fileID: 0}
   volume: 0.4
   pitch: 1
   loop: 0

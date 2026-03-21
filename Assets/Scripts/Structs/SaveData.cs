@@ -1,9 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public struct SongSaveData
+{
+    public Dictionary<int, int> scoreForDifficulty;
+}
 
 [System.Serializable]
 public struct SaveData
 {
-    // some thingy for high scores i need level stuff this ts <--
+    public Dictionary<string, SongSaveData> songsData;
 
     public uint selectedCharacterID;
 }
