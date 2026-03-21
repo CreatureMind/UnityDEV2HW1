@@ -35,12 +35,11 @@ namespace UI
 
         private void Start()
         {
-            /*
-            add these listeners to the sliders once the sound manager is implemented
-            masterVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMasterVolume(value));
-            musicVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMusicVolume(value));
-            sFXVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetSFXVolume(value));  
-            */
+            
+            masterVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetMasterVolume(value));
+            musicVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetMusicVolume(value));
+            sFXVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetSFXVolume(value));  
+            
             
             HideMenu();
         }

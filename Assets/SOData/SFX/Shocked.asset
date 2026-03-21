@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8e8fa8520232e4b80bca1e4a726e1e, type: 3}
+  m_Name: Shocked
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEffectSO
+  soundName: Shocked
+  preview: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: b06b08bb9f6dfd948b980da4af42b59d, type: 3}
+  mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+  volume: 0.4
+  pitch: 1
+  loop: 0
+  playOnAwake: 1

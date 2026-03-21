@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f71e45194e42948bd8a02b3ec85e27, type: 3}
+  m_Name: SFXs
+  m_EditorClassIdentifier: Assembly-CSharp::SFXWraperSO
+  SFX:
+  - {fileID: 11400000, guid: 0d851051f910ffd4fae0275e96e1bb9e, type: 2}
+  - {fileID: 11400000, guid: 37b9e5f2a4cb6d74dbb95398033c9331, type: 2}
+  - {fileID: 11400000, guid: 4f8cee985b25b9e40a03d6f3215941c1, type: 2}
+  - {fileID: 11400000, guid: 9a0be8640dc60b3489e212c1492afa30, type: 2}
+  - {fileID: 11400000, guid: c0e3885f2e0d7d843ba148fc8275a7cc, type: 2}
+  - {fileID: 11400000, guid: 8104aa4f7ecbabd4d94c0bebfbb94367, type: 2}
+  - {fileID: 11400000, guid: 05ce8f1a681184647b9e5f4218f84ed2, type: 2}
+  - {fileID: 11400000, guid: b6e593a851aba784da33a8c1705f3234, type: 2}
+  - {fileID: 11400000, guid: 3694fe75fb40d1c498c5ed4f286c4bff, type: 2}
+  - {fileID: 11400000, guid: 342e20da623553e4895eece4dcee8cf4, type: 2}

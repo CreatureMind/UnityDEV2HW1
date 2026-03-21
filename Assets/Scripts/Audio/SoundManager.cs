@@ -1,11 +1,17 @@
 using System;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour
 {
     [FormerlySerializedAs("songs")] [SerializeField] private SongWraperSO songWraperSo;
+    [FormerlySerializedAs("SFXs")][SerializeField] private SFXWraperSO vfxClips;
+    [Header("Audio Mixer Groups")]
+    [SerializeField] private AudioMixerGroup musicMixerGroup;
+    [SerializeField] private AudioMixerGroup sfxMixerGroup;
+
     private Sound[] sounds;
     public static SoundManager instance;
 
@@ -36,6 +42,7 @@ public class SoundManager : MonoBehaviour
                 pitch = song.pitch,
                 loop = song.loop,
                 playOnAwake = song.playOnAwake,
+                mixerGroup = song.mixerGroup,
                 source = gameObject.AddComponent<AudioSource>()
             };
             sounds[i].source.clip = sounds[i].clip;
@@ -43,6 +50,8 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.pitch = sounds[i].pitch;
             sounds[i].source.loop = sounds[i].loop;
             sounds[i].source.playOnAwake = sounds[i].playOnAwake;
+            sounds[i].source.outputAudioMixerGroup = sounds[i].mixerGroup;
+
         }
 
     }
@@ -71,6 +80,10 @@ public class SoundManager : MonoBehaviour
                 return;
             }
         }
+        if (s.source.outputAudioMixerGroup == null)
+        {
+            s.source.outputAudioMixerGroup = sfxMixerGroup;
+        }
 
         s.source.Play();
     }
@@ -98,6 +111,11 @@ public class SoundManager : MonoBehaviour
                 return;
             }
         }
+        if (s.source.outputAudioMixerGroup == null)
+        {
+            s.source.outputAudioMixerGroup = musicMixerGroup;
+        }
+
 
         s.source.Play();
     }
