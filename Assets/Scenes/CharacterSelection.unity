@@ -148,10 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60383ccd9a95bfa4983c04136ddb372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  thisMenuType: 0
+  canvasGroup: {fileID: 0}
   controller: {fileID: 501030731}
-  nameTexts:
-  - {fileID: 1132487488}
-  - {fileID: 1380142916}
+  nameTextOutline: {fileID: 1132487488}
+  nameTextFill: {fileID: 1380142916}
   door: {fileID: 202974098}
 --- !u!4 &22166882
 Transform:
@@ -1197,7 +1198,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1320,6 +1321,7 @@ GameObject:
   - component: {fileID: 1141812863}
   - component: {fileID: 1141812862}
   - component: {fileID: 1141812861}
+  - component: {fileID: 1141812864}
   m_Layer: 5
   m_Name: ButtonLeft
   m_TagString: Untagged
@@ -1433,6 +1435,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141812859}
   m_CullTransparentMesh: 1
+--- !u!114 &1141812864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141812859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ad983c3c3b23a488ff52961ba9c775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rainbow
+  rainbowCycleDuration: 10
+  visual: {fileID: 1141812862}
 --- !u!1 &1380142915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1520,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2228,6 +2244,7 @@ GameObject:
   - component: {fileID: 2040603948}
   - component: {fileID: 2040603947}
   - component: {fileID: 2040603946}
+  - component: {fileID: 2040603949}
   m_Layer: 5
   m_Name: ButtonRight
   m_TagString: Untagged
@@ -2341,6 +2358,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040603944}
   m_CullTransparentMesh: 1
+--- !u!114 &2040603949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040603944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ad983c3c3b23a488ff52961ba9c775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rainbow
+  rainbowCycleDuration: 10
+  visual: {fileID: 2040603947}
 --- !u!1 &2082485720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,7 +2511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652810711556}
   m_Layer: 0
-  m_Name: bathroom 1
+  m_Name: bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,13 +1,15 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UI.Base;
 using UnityEngine;
 
-public class CharacterSelectionManager : MonoBehaviour
+public class CharacterSelectionManager : BaseMenu
 {
     [SerializeField] private AnimationController controller;
     private Character[] characters;
-    [SerializeField] private List<TMP_Text> nameTexts;
+    [SerializeField] private TMP_Text nameTextOutline;
+    [SerializeField] private TMP_Text nameTextFill;
     [SerializeField] private BathroomDoor door;
 
     private int selectedCharacter = 0;
@@ -44,7 +46,10 @@ public class CharacterSelectionManager : MonoBehaviour
 
     void UpdateInfoText()
     {
-        nameTexts.ForEach(x => x.text = characters[selectedCharacter].characterName);
+        nameTextOutline.text = characters[selectedCharacter].characterName;
+        nameTextFill.text = characters[selectedCharacter].characterName;
+
+        nameTextFill.color = characters[selectedCharacter].characterColor;
     }
 
     void DoorOpened()
@@ -67,5 +72,20 @@ public class CharacterSelectionManager : MonoBehaviour
         SaveManager.saveData.selectedCharacterID = characters[selectedCharacter].characterID;
 
         SaveManager.WriteSaveData();
+    }
+
+    public override void ShowMenu()
+    {
+        // backfip :sunglasses:
+    }
+
+    public override void HideMenu()
+    {
+        //b to bar
+    }
+
+    public override void EscapePressed()
+    {
+        //b to bar
     }
 }

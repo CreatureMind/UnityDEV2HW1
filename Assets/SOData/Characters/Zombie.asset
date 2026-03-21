@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterID: 2
   characterName: Zombie
+  characterColor: {r: 0.3638202, g: 0.8584906, b: 0.20652366, a: 1}

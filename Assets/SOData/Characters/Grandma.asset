@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterID: 1
   characterName: Grandma
+  characterColor: {r: 1, g: 0.44313726, b: 0.6745098, a: 1}

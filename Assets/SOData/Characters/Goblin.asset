@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Character
   characterID: 3
   characterName: Goblin
+  characterColor: {r: 0.10346207, g: 0.6738979, b: 0.8773585, a: 1}

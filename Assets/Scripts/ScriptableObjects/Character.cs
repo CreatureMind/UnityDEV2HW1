@@ -5,4 +5,5 @@ public class Character : ScriptableObject
 {
     public uint characterID;
     public string characterName;
+    public Color characterColor = Color.white;
 }
