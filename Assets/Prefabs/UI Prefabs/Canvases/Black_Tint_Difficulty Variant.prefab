@@ -2318,6 +2318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyPopupManager
   thisMenuType: 4
   canvasGroup: {fileID: 2828471037257074549}
+  rectTransform: {fileID: 1208714518052913649}
   isMemeToggle: {fileID: 2964860098164607554}
   easyButton: {fileID: 7036074479528301566}
   mediumButton: {fileID: 820821315527752475}

@@ -37,7 +37,7 @@ public class DifficultyPopupManager : BaseMenu
         hardButton.onClick.AddListener(() => DifficultySelected(2));
         quitButton.onClick.AddListener(EscapePressed);
         
-        //HideMenu();
+        HideMenu();
     }
     
     private void DifficultySelected(int difficulty)
