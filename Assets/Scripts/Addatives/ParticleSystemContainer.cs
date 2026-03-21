@@ -27,7 +27,7 @@ public class ParticleSystemContainer : MonoBehaviour
 
     private void OnValidate()
     {
-        if (particleSystems.Count <= 0 || particleSystems == null)
+        if (particleSystems.Count < 0 || particleSystems == null)
         {
             var allParSys = GetComponentsInChildren<ParticleSystem>();
             particleSystems = new List<ParticleSystem>(allParSys);
