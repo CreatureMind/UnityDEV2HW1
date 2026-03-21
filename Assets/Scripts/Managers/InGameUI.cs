@@ -26,6 +26,11 @@ public class InGameUI : BaseMenu
     
     private readonly List<Image> _spawnedDigits = new();
     private Dictionary<Transform, Vector3> _originalScales = new();
+    private bool isPaused;
+    
+    public static event Action OnMenuClosed;
+    public static event Action OnMenuOpened;
+    
 
     void OnEnable()
     {
@@ -41,6 +46,11 @@ public class InGameUI : BaseMenu
         ScoreManager.Instance?.OnComboChangedEvent.RemoveListener(ChangeCombo);
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     private void Start()
     {
         
@@ -48,6 +58,7 @@ public class InGameUI : BaseMenu
         {
             _originalScales[comp.image] = comp.image.localScale;
         }
+        
     }
 
     private void ChangeScore(int score)
@@ -119,15 +130,32 @@ public class InGameUI : BaseMenu
     public override void ShowMenu()
     {
         canvasGroup.alpha = 1;
+        if (isPaused)
+        {
+            isPaused = false;
+        }
+        else
+        {
+            OnMenuOpened?.Invoke();
+        }
     }
 
     public override void HideMenu()
     {
-        canvasGroup.alpha = 0.5f;
+        if (isPaused)
+        {
+            canvasGroup.alpha = 0.5f;
+        }
+        else
+        {
+            canvasGroup.alpha = 0f;
+            OnMenuClosed?.Invoke();
+        }
     }
 
     public override void EscapePressed()
     {
+        isPaused = true;
         UI_Manager.Instance.SwapMenu(MenuType.PauseMenu);
     }
 }

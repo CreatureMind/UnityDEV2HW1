@@ -19,6 +19,7 @@ public class HpBar : MonoBehaviour
     private float gainAmount;
     private float penaltyAmount;
     private float offset;
+    private bool isLoaded = false;
     
     void OnEnable()
     {
@@ -42,6 +43,7 @@ public class HpBar : MonoBehaviour
         var penalty = 100 / song.patterns[difficulty].penalty;
         gainAmount = 1 / gain;
         penaltyAmount = 1 / penalty;
+        isLoaded = true;
     }
     
     private void Start()
@@ -62,6 +64,7 @@ public class HpBar : MonoBehaviour
 
     private void Update()
     {
+        if (!isLoaded) return;
         hpBarValue = Mathf.Clamp01(hpBarValue);
         slider.value = Mathf.Clamp(hpBarValue + offset, 0f, 1f);
 

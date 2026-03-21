@@ -123,7 +123,6 @@ namespace UI.Vinyl
             
             if ((clickedObject & vinylRackLayer.value) != 0 && !_isClicked)
             {
-                ShowMenu();
                 UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
             }
         }
@@ -148,6 +147,5 @@ namespace UI.Vinyl
             HideMenu();
             UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
         }
-
     }
 }
