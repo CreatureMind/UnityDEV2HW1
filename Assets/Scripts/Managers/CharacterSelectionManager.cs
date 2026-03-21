@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class CharacterSelectionManager : MonoBehaviour
 {
     [SerializeField] private AnimationController controller;
     private Character[] characters;
-    [SerializeField] private TMP_Text nameText;
+    [SerializeField] private List<TMP_Text> nameTexts;
     [SerializeField] private BathroomDoor door;
 
     private int selectedCharacter = 0;
@@ -39,13 +40,11 @@ public class CharacterSelectionManager : MonoBehaviour
             door.CloseDoor();
             doorClosing = true;
         }
-
-        UpdateInfoText();
     }
 
     void UpdateInfoText()
     {
-        nameText.text = characters[selectedCharacter].characterName;
+        nameTexts.ForEach(x => x.text = characters[selectedCharacter].characterName);
     }
 
     void DoorOpened()
@@ -56,6 +55,7 @@ public class CharacterSelectionManager : MonoBehaviour
     void DoorClosed()
     {
         controller.SelectCharacter(characters[selectedCharacter]);
+        UpdateInfoText();
 
         doorClosing = false;
 
