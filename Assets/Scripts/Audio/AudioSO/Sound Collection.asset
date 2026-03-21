@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: Sound Collection
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableSoundObject
   VFX:
+  - name: Punch
+    clip: {fileID: 8300000, guid: 3565dd61795ac3443b6b576249d0d424, type: 3}
+    mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: RobloxDeathSound-Meme
     clip: {fileID: 8300000, guid: 27e1cf8e3923a4a419a6d705297cc8bc, type: 3}
     mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
@@ -47,6 +55,38 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Discord Leave Noise
     clip: {fileID: 8300000, guid: 0a48af7bb9feee14bac5c0b189752f3a, type: 3}
+    mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: AmbianceBar
+    clip: {fileID: 8300000, guid: 8e3ad6cb52c969e479ee4078434f9301, type: 3}
+    mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: RecordScratch
+    clip: {fileID: 8300000, guid: 1c4f3cde9811f844d8d77f915e1e51a2, type: 3}
+    mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: RecordScratch2
+    clip: {fileID: 8300000, guid: 1fbae589e97030242b41ed20fb705e94, type: 3}
+    mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Woosh
+    clip: {fileID: 8300000, guid: 1861bcdba5fcddb4a88e77f3cb16119a, type: 3}
     mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
     volume: 1
     pitch: 1
