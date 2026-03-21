@@ -9,7 +9,7 @@ namespace UI
     public class NewHighScore : BaseMenu
     {
         [Header("Texts")]
-        [SerializeField] private TMP_Text currentScoreText;
+        [SerializeField] private TMP_Text lastScoreText;
         [SerializeField] private TMP_Text newScoreText;
         
         [Header("Buttons")]
@@ -33,11 +33,17 @@ namespace UI
         public void LoadScore(string songID, int songDifficulty)
         {
             SaveManager.LoadSaveData();
+            
             var currentScore = ScoreManager.Instance.CurrentScore;
-            var savedScore = SaveManager.saveData.songsData.ContainsKey()
-            currentScoreText.text = currentScore.ToString();
-            newScoreText.text = newScore.ToString();
-            ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+            var savedScore = SaveManager.saveData.songsData[songID].scoreForDifficulty[songDifficulty];
+            
+            lastScoreText.text = savedScore == 0 ? "0" : savedScore.ToString();
+            newScoreText.text = currentScore.ToString();
+            
+            if (currentScore > savedScore)
+            {
+                ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+            }
         }
         
         public override void ShowMenu()
@@ -61,7 +67,7 @@ namespace UI
         public override void EscapePressed()
         {
             transform.ShakeAndHide(canvasGroup, HideMenu);
-            UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
+            UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
         }
     }
 }

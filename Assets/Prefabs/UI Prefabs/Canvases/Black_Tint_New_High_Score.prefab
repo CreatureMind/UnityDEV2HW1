@@ -403,8 +403,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'New High Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 73ca3e2d41a2f7f45bcc34f8627bdb31, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 56dfc410cb30d4047bd401ac5cf05f9b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2897da4a770367409bffe220c932711, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b983240492021a14f927d0ab6b791d55, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.2
+  m_fontSize: 58.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congratz...
+  m_text: Congratzzz...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2897da4a770367409bffe220c932711, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 83ec587762d61cf48903949a5e05b46d, type: 2}
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 4944423101319612426}
   - component: {fileID: 267063522508973372}
   m_Layer: 5
-  m_Name: Current_Score_Title_Text
+  m_Name: Last_Score_Title_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1057,10 +1057,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current score:'
+  m_text: 'Last score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 73ca3e2d41a2f7f45bcc34f8627bdb31, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 56dfc410cb30d4047bd401ac5cf05f9b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2897da4a770367409bffe220c932711, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: b983240492021a14f927d0ab6b791d55, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 57.3
+  m_fontSize: 66.85
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 6044681410687157385}
   - component: {fileID: 6559168846738919294}
   m_Layer: 5
-  m_Name: Current_Score_Text
+  m_Name: Last_Score_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1454,7 @@ PrefabInstance:
       addedObject: {fileID: 2828471037257074549}
     - targetCorrespondingSourceObject: {fileID: 1281742913707955892, guid: d7a03245db563d440b67447f59c72b52, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4058723219163613043}
+      addedObject: {fileID: 1331787796929679741}
   m_SourcePrefab: {fileID: 100100000, guid: d7a03245db563d440b67447f59c72b52, type: 3}
 --- !u!224 &791492791949936532 stripped
 RectTransform:
@@ -1508,7 +1508,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &4058723219163613043
+--- !u!114 &1331787796929679741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1517,15 +1517,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5983034346895137842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0cc6b9e5d195ef478414eb843406732, type: 3}
+  m_Script: {fileID: 11500000, guid: fd06c9eb3871f0f4fa332e4242eeccbd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DifficultyPopupManager
-  thisMenuType: 4
+  m_EditorClassIdentifier: '::'
+  thisMenuType: 0
   canvasGroup: {fileID: 2828471037257074549}
-  rectTransform: {fileID: 1208714518052913649}
-  isMemeToggle: {fileID: 0}
-  easyButton: {fileID: 0}
-  mediumButton: {fileID: 0}
-  hardButton: {fileID: 0}
+  lastScoreText: {fileID: 0}
+  newScoreText: {fileID: 4792688382947274500}
   quitButton: {fileID: 7531013704620547543}
-  sceneToLoad: 0
