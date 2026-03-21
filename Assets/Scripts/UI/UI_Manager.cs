@@ -1,47 +1,55 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UI.Base;
+
 
 public class UI_Manager : MonoBehaviour
 {
+    public static UI_Manager Instance;
     [SerializeField] private List<BaseMenu> _menus = new List<BaseMenu>();
     private Dictionary<MenuType, BaseMenu> _menuDictionary = new Dictionary<MenuType, BaseMenu>();
     
     private MenuType _currentMenu;
     private MenuType _lastMenu;
 
-    private void Start()
+    private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+        
+        DontDestroyOnLoad(this);
+        
+        
         InitDictionary();
         InputHandler.OnEscapePress += PlayerPressedEscape;
-        BaseMenu.OnMenuOpened += SwapMenu;
+    }
+    
+    private void Start()
+    {
+        SetMenu(MenuType.DifficultySelectionMenu);
     }
     
     private void PlayerPressedEscape()
     {
-        switch (_currentMenu)
+        if (_menuDictionary.TryGetValue(_currentMenu, out BaseMenu menu))
         {
-            case MenuType.BarMenu:
-                SwapMenu(MenuType.MainMenu);
-                break;
-            case MenuType.SongSelectionMenu:
-                SwapMenu(MenuType.BarMenu);
-                break;
-            case MenuType.DifficultySelectionMenu:
-                SwapMenu(MenuType.SongSelectionMenu);
-                break;
-            case MenuType.PauseMenu:
-                SwapMenu(_lastMenu);
-                break;
-            case MenuType.InGameMenu:
-                SwapMenu(MenuType.PauseMenu);
-                break;
-            case MenuType.MainMenu:
-                break;
+            menu.EscapePressed();
         }
     }
     
-    private void SwapMenu(MenuType menuType)
+    private void SetMenu(MenuType menuType)
+    {
+        if (_menuDictionary.TryGetValue(menuType, out BaseMenu menu))
+        {
+            menu.ShowMenu();
+            _currentMenu = menuType;
+        }
+    }
+    
+    public void SwapMenu(MenuType menuType)
     {
         if (_currentMenu == menuType)
             return;
@@ -67,17 +75,7 @@ public class UI_Manager : MonoBehaviour
 }
 
 
-public abstract class BaseMenu : MonoBehaviour
-{
-    [SerializeField] private MenuType thisMenuType;
 
-    public static Action<MenuType> OnMenuOpened;
-    
-    public abstract void ShowMenu();
-    public abstract void HideMenu();
-    
-    public MenuType ThisMenuType => thisMenuType;
-}
 
 public enum MenuType
 {

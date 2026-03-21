@@ -16,39 +16,47 @@ public class ArrowsSpawner : MonoBehaviour
     [SerializeField, Range(1,3)] private float scrollTime; //GD number in seconds
     [SerializeField] private Transform goalCollider;
     
-    private DdrPattern currentPattern;
-    private AudioClip song;
+    private DdrPatternSO _currentPatternSo;
+    private string songName;
+    private float songLength;
     private int BPM;
     private ArrowStep[] steps;
-    private float preSongDelay;
+    private float perPatternDelay;
     private float distanceToGoal;
     private float arrowSpeed;
     private float arrowSpeedScaleFactor;
+    
+    private bool isPaused = false;
 
-    public static event Action<DdrPattern> OnSongEnded;
+    public static event Action OnSongEnded;
+    public static event Action OnBeat;
 
     void OnEnable()
     {
-        DifficultyPopupManager.OnSelected += LoadSongData;
+        //DifficultyPopupManager.OnSelected += LoadSongData;
     }
 
     void OnDisable()
     {
-        DifficultyPopupManager.OnSelected -= LoadSongData;
+        //DifficultyPopupManager.OnSelected -= LoadSongData;
     }
 
-    private void LoadSongData(DdrPattern pattern)
+    private void Start()
     {
-        currentPattern = pattern;
-        
         distanceToGoal = (transform.position - goalCollider.position).magnitude;
         arrowSpeed = distanceToGoal / scrollTime;
+    }
+    
+    private void LoadSongData(SongSO songSo, bool meme, int difficulty)
+    {
+        var currentPattern = songSo.patterns[difficulty];
         
-        song = SoundManager.instance.GetAudioClip(pattern.songName);
-        preSongDelay = pattern.delay;
-        arrowSpeedScaleFactor = pattern.arrowSpeedScaleFactor;
-        BPM = pattern.bpm;
-        steps = pattern.steps;
+        songName = songSo.songName;
+        songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
+        perPatternDelay = currentPattern.delay;
+        arrowSpeedScaleFactor = currentPattern.arrowSpeedScaleFactor;
+        BPM = songSo.bpm;
+        steps = currentPattern.steps;
         
         StartCoroutine(StartTrack());
     }
@@ -85,10 +93,11 @@ public class ArrowsSpawner : MonoBehaviour
 
     private IEnumerator StartTrack()
     {
-        var songLengthInSeconds =  song.length - preSongDelay - preSongDelay;
+        var songLengthInSeconds =  songLength - perPatternDelay - perPatternDelay;
         var secondsPerBeat = 60f / BPM;
 
-        yield return new WaitForSeconds(preSongDelay);
+        SoundManager.instance.PlayMusic(songName);
+        yield return new WaitForSeconds(perPatternDelay);
 
         while (songLengthInSeconds > 0)
         {
@@ -99,12 +108,14 @@ public class ArrowsSpawner : MonoBehaviour
                 yield return new WaitForSeconds(secondsPerBeat);
                 arrowSpeed += arrowSpeedScaleFactor;
                 songLengthInSeconds -= secondsPerBeat;
+                OnBeat?.Invoke();
             }
         }
         
-        yield return new WaitForSeconds(preSongDelay);
+        SoundManager.instance.StopMusic(songName);
+        yield return new WaitForSeconds(perPatternDelay);
         
-        OnSongEnded?.Invoke(currentPattern);
+        OnSongEnded?.Invoke();
     }
 }
 
