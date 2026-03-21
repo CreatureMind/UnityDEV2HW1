@@ -9,7 +9,6 @@ public class SoundMixer : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -26,8 +25,6 @@ public class SoundMixer : MonoBehaviour
 
     private void SetVolume(string parameterName, float value)
     {
-        // Converts linear 0-1 to logarithmic decibels
-        // We use 0.0001f to avoid Log10(0) which is undefined/error
         float dB = Mathf.Log10(Mathf.Max(0.0001f, value)) * 20;
         mainMixer.SetFloat(parameterName, dB);
     }
