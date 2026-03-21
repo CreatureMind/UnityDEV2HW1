@@ -48,13 +48,11 @@ namespace UI
         private void ResumeOnClick()
         {
             StartCoroutine(CountDown());
-            OnMenuOpened?.Invoke(MenuType.InGameMenu);
         }
 
         private void MainMenuOnClick()
         {
             Time.timeScale = 1;
-            OnMenuOpened?.Invoke(MenuType.MainMenu);
             menuTransform.DOShakePosition(0.2f, 15, 40).SetUpdate(true).OnComplete(() => menuTransform.localScale = Vector3.zero);
         }
 

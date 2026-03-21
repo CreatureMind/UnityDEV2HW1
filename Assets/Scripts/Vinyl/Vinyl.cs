@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Vinyl
+namespace UI.Vinyl
 {
     public class Vinyl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
@@ -21,9 +21,9 @@ namespace Vinyl
         private Quaternion _startRot;
         private bool _isSelected = false;
     
-        public static event Action<Song> OnSelectedSong;
+        public static event Action<SongSO> OnSelectedSong;
 
-        private Song Song { get; set; }
+        private SongSO SongSo { get; set; }
     
         private bool _isHovered = false;
 
@@ -46,13 +46,13 @@ namespace Vinyl
             songName.gameObject.SetActive(false);
         }
     
-        public void SetSong(Song song)
+        public void SetSong(SongSO songSo)
         {
-            Song = song;
-            if (Song)
+            SongSo = songSo;
+            if (SongSo)
             {
-                sr.sprite = song.preview ? song.preview : noPreview;
-                songName.text = song.songName;
+                sr.sprite = songSo.preview ? songSo.preview : noPreview;
+                songName.text = songSo.songName;
             }
         }
 
@@ -84,7 +84,7 @@ namespace Vinyl
         {
             if (!_isSelected) return;
         
-            OnSelectedSong?.Invoke(Song);
+            OnSelectedSong?.Invoke(SongSo);
         }
     }
 }

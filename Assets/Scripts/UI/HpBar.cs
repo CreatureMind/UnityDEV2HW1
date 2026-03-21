@@ -20,28 +20,26 @@ public class HpBar : MonoBehaviour
     private float penaltyAmount;
     private float offset;
     
-    public static event Action OnHpEnded;
-    
     void OnEnable()
     {
-        DifficultyPopupManager.OnSelected += LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected += LoadSongData;
         ArrowGoal.OnHit += AddLife;
         ArrowGoal.OnMiss += RemoveLife;
     }
 
     void OnDisable()
     {
-        DifficultyPopupManager.OnSelected -= LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected -= LoadSongData;
         ArrowGoal.OnHit -= AddLife;
         ArrowGoal.OnMiss -= RemoveLife;
     }
     
-    private void LoadSongData(DdrPattern pattern)
+    private void LoadSongData(SongSO song, bool meme, int difficulty)
     {
         hpBarValue = 0.5f;
-        
-        var gain = 100 / pattern.gain;
-        var penalty = 100 / pattern.penalty;
+
+        var gain = 100 / song.patterns[difficulty].gain;
+        var penalty = 100 / song.patterns[difficulty].penalty;
         gainAmount = 1 / gain;
         penaltyAmount = 1 / penalty;
     }
@@ -70,7 +68,7 @@ public class HpBar : MonoBehaviour
         if (hpBarValue <= 0)
         {
             SoundManager.instance.StopAllMusic();
-            OnHpEnded?.Invoke();
+            UI_Manager.Instance.SwapMenu(MenuType.DifficultySelectionMenu);
         }
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Songs", menuName = "DDR/Songs")]
-public class Songs : ScriptableObject
+public class SongWraperSO : ScriptableObject
 {
-    public Song[] songs;
+    public SongSO[] songs;
 }

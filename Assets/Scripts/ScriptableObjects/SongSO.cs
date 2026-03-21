@@ -2,7 +2,7 @@ using ScriptableObjects;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Song", menuName = "DDR/Song")]
-public class Song : ScriptableObject
+public class SongSO : ScriptableObject
 {
     public string songName;
     public Sprite preview;
@@ -16,5 +16,5 @@ public class Song : ScriptableObject
     public bool playOnAwake = true;
     [Range(120,300)]
     public int bpm;
-    public DdrPattern[] patterns;
+    public DdrPatternSO[] patterns;
 }

@@ -16,7 +16,7 @@ public class ArrowsSpawner : MonoBehaviour
     [SerializeField, Range(1,3)] private float scrollTime; //GD number in seconds
     [SerializeField] private Transform goalCollider;
     
-    private DdrPattern currentPattern;
+    private DdrPatternSO _currentPatternSo;
     private string songName;
     private float songLength;
     private int BPM;
@@ -33,12 +33,12 @@ public class ArrowsSpawner : MonoBehaviour
 
     void OnEnable()
     {
-        DifficultyPopupManager.OnSelected += LoadSongData;
+        //DifficultyPopupManager.OnSelected += LoadSongData;
     }
 
     void OnDisable()
     {
-        DifficultyPopupManager.OnSelected -= LoadSongData;
+        //DifficultyPopupManager.OnSelected -= LoadSongData;
     }
 
     private void Start()
@@ -47,15 +47,15 @@ public class ArrowsSpawner : MonoBehaviour
         arrowSpeed = distanceToGoal / scrollTime;
     }
     
-    private void LoadSongData(Song song, bool meme, int difficulty)
+    private void LoadSongData(SongSO songSo, bool meme, int difficulty)
     {
-        var currentPattern = song.patterns[difficulty];
+        var currentPattern = songSo.patterns[difficulty];
         
-        songName = song.songName;
-        songLength = !meme ? song.audioClipNormal.length : song.audioClipMeme.length;
+        songName = songSo.songName;
+        songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
         perPatternDelay = currentPattern.delay;
         arrowSpeedScaleFactor = currentPattern.arrowSpeedScaleFactor;
-        BPM = song.bpm;
+        BPM = songSo.bpm;
         steps = currentPattern.steps;
         
         StartCoroutine(StartTrack());

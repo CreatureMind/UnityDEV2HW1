@@ -5,8 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
-namespace Vinyl
+namespace UI.Vinyl
 {
     public class VinylRack : MonoBehaviour, IPointerClickHandler
     {
@@ -20,8 +21,9 @@ namespace Vinyl
         [SerializeField] private float moveHeight = 0.2f;
         [SerializeField] private float duration = 0.5f;
     
+        [FormerlySerializedAs("songs")]
         [Header("Vinyls")]
-        [SerializeField] private Songs songs;
+        [SerializeField] private SongWraperSO songWraperSo;
         [SerializeField] private Vinyl[] vinyls;
     
         public static event Action OnSelected;
@@ -63,7 +65,7 @@ namespace Vinyl
         
             if (scroll == 0f) return;
         
-            int totalSongs = songs.songs.Length;
+            int totalSongs = songWraperSo.songs.Length;
             int maxOffset = Mathf.Max(0, totalSongs - vinyls.Length);
 
             if (scroll > 0f)
@@ -101,10 +103,10 @@ namespace Vinyl
             {
                 int songIndex = i + _scrollOffset;
 
-                if (songIndex < songs.songs.Length)
+                if (songIndex < songWraperSo.songs.Length)
                 {
                     vinyls[i].gameObject.SetActive(true);
-                    vinyls[i].SetSong(songs.songs[songIndex]);
+                    vinyls[i].SetSong(songWraperSo.songs[songIndex]);
                 }
                 else
                 {

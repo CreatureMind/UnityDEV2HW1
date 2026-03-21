@@ -16,13 +16,13 @@ public class SongProgress : MonoBehaviour
     
     void OnEnable()
     {
-        DifficultyPopupManager.OnSelected += LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected += LoadSongData;
         ArrowsSpawner.OnBeat += AddProgress;
     }
 
     void OnDisable()
     {
-        DifficultyPopupManager.OnSelected -= LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected -= LoadSongData;
         ArrowsSpawner.OnBeat -= AddProgress;
     }
 
@@ -38,13 +38,13 @@ public class SongProgress : MonoBehaviour
         }
     }
 
-    private void LoadSongData(Song song, bool meme, int difficulty)
+    private void LoadSongData(SongSO songSo, bool meme, int difficulty)
     {
-        var currentPattern = song.patterns[difficulty];
+        var currentPattern = songSo.patterns[difficulty];
         
-        songLength = !meme ? song.audioClipNormal.length : song.audioClipMeme.length;
+        songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
         songLength = songLength - currentPattern.delay - currentPattern.delay;
-        var totalBeats = songLength * song.bpm / 60f;
+        var totalBeats = songLength * songSo.bpm / 60f;
         progressPerBeat = 1f / totalBeats;
     }
 

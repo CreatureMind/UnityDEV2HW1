@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+
 namespace ScriptableObjects
 {
     [System.Serializable]
@@ -26,7 +27,7 @@ namespace ScriptableObjects
     }
 
     [CreateAssetMenu(fileName = "NewPattern", menuName = "DDR/Pattern")]
-    public class DdrPattern : ScriptableObject
+    public class DdrPatternSO : ScriptableObject
     {
         public float delay;
         [Range(1f, 50f)] public float gain;

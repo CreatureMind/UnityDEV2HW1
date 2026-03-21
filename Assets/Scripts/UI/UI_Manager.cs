@@ -29,7 +29,7 @@ public class UI_Manager : MonoBehaviour
     
     private void Start()
     {
-        SetMenu(MenuType.MainMenu);
+        SetMenu(MenuType.DifficultySelectionMenu);
     }
     
     private void PlayerPressedEscape()

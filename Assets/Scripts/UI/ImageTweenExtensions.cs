@@ -54,5 +54,55 @@ namespace UI
             seq.Play();
             return seq;
         }
+        
+        
+        public static Sequence ShakeAndHide(this
+            Transform target,
+            CanvasGroup canvasGroup = null,
+            Action onComplete = null,
+            float duration = 0.2f,
+            float strength = 15f,
+            int vibrato = 40,
+            float randomness = 90f,
+            bool useUnscaledTime = true
+            )
+        {
+            if (target == null) return null;
+
+            // kill existing tweens to avoid conflicting animations
+            target.DOKill();
+            if (canvasGroup != null) canvasGroup.DOKill();
+
+            // ensure visible before anim
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = 1f;
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.interactable = true;
+            }
+
+            var seq = DOTween.Sequence();
+            seq.SetUpdate(useUnscaledTime);
+
+            // shake position, optionally fade canvasGroup concurrently
+            seq.Append(target.DOShakePosition(duration, strength, vibrato, randomness).SetUpdate(useUnscaledTime));
+            if (canvasGroup != null)
+                seq.Join(canvasGroup.DOFade(0f, duration).SetUpdate(useUnscaledTime));
+
+            seq.OnComplete(() =>
+            {
+                target.localScale = Vector3.zero;
+                if (canvasGroup != null)
+                {
+                    canvasGroup.alpha = 0f;
+                    canvasGroup.blocksRaycasts = false;
+                    canvasGroup.interactable = false;
+                }
+                onComplete?.Invoke();
+            });
+
+            seq.Play();
+            return seq;
+        }
     }
 }
