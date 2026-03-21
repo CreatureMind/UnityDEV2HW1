@@ -9,6 +9,7 @@ namespace Arrows
     {
         [SerializeField] private float threshold;
         
+        public static event Action OnHit;
         public static event Action OnMiss;
         private readonly List<Arrow> _arrows = new();
 
@@ -72,6 +73,7 @@ namespace Arrows
                 else
                 {
                     ScoreManager.Instance.SendThreshold(1 - unmapped);
+                    OnHit?.Invoke();
                     arrowToRemove.Add(arrow);
                     arrow.isSuccessful = true;
                 }
