@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterSelectionManager : BaseMenu
 {
-    [SerializeField] private AnimationController controller;
+    [SerializeField] private SelectedCharacterParent characterParent;
     private Character[] characters;
     [SerializeField] private TMP_Text nameTextOutline;
     [SerializeField] private TMP_Text nameTextFill;
@@ -18,9 +18,9 @@ public class CharacterSelectionManager : BaseMenu
 
     void Start()
     {
-        characters = controller.GetCharacters();
+        characters = characterParent.GetCharacters();
 
-        selectedCharacter = Array.IndexOf(characters, controller.GetSelectedCharacter());
+        selectedCharacter = Array.IndexOf(characters, characterParent.GetSelectedCharacter());
 
         UpdateInfoText();
         door.OnDoorClosed += DoorClosed;
@@ -59,7 +59,7 @@ public class CharacterSelectionManager : BaseMenu
 
     void DoorClosed()
     {
-        controller.SelectCharacter(characters[selectedCharacter]);
+        characterParent.SelectCharacter(characters[selectedCharacter]);
         UpdateInfoText();
 
         doorClosing = false;

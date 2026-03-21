@@ -3,40 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
-public struct CharacterWithAnimators
-{
-    public Character characterOptions;
-    public Animator characterAnimator;
 
-    public override bool Equals(object obj)
-    {
-        if (obj is not CharacterWithAnimators character) return false;
-
-        return characterOptions == character.characterOptions;
-    }
-
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
-}
 
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] private CharacterWithAnimators[] characters;
-    [SerializeField] private Character selectedCharacter;
+    [SerializeField] private SelectedCharacterParent charactersHolder;
+    public SelectedCharacterParent CharactersHolder => charactersHolder;
+
+    private Animator _anima;
     private Animator Anima {
         get
         {
-            foreach (var character in characters)
-            {
-                if (character.characterOptions != selectedCharacter) continue;
-                    return character.characterAnimator;
-            }
+            var characterObj = charactersHolder.SelectedCharacterObj;
 
-            return null;
+            if (characterObj == null)
+                return null;
+
+            if (_anima != null && _anima.gameObject == characterObj) return _anima;
+
+            _anima = characterObj.GetComponent<Animator>();
+            return _anima;
         }
     }
 
@@ -64,37 +51,11 @@ public class AnimationController : MonoBehaviour
 
     private Coroutine fadeCoroutine;
 
-    void Awake()
-    {
-        SaveManager.LoadSaveData();
-
-        foreach (var character in characters)
-        {
-            if (character.characterOptions.characterID != SaveManager.saveData.selectedCharacterID)
-                continue;
-
-            selectedCharacter = character.characterOptions;
-            break;
-        }
-    }
-
     private void Start()
     {
         TomatoCollision.OnTomatoHit += TomatoHitPlayer;
         ScoreManager.Instance?.OnComboChangedEvent.AddListener(OnComboChanged);
-
-        DisableInvalidCharacters();
     }
-
-    public void SelectCharacter(Character character)
-    {
-        selectedCharacter = character;
-        DisableInvalidCharacters();
-    }
-
-    public Character GetSelectedCharacter() => selectedCharacter;
-
-    public Character[] GetCharacters() => characters.Select(x => x.characterOptions).ToArray();
 
     private void OnComboChanged(int combo)
     {
@@ -166,13 +127,5 @@ public class AnimationController : MonoBehaviour
         }
 
         Anima.SetLayerWeight(layerIndex, target);
-    }
-
-    void DisableInvalidCharacters()
-    {
-        foreach (var character in characters)
-        {
-            character.characterAnimator.gameObject.SetActive(character.characterOptions == selectedCharacter);
-        }
     }
 }
