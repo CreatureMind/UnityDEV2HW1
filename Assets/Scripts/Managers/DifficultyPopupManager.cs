@@ -53,11 +53,12 @@ public class DifficultyPopupManager : BaseMenu
 
     public override void ShowMenu()
     {
+        Time.timeScale = 0;
         canvasGroup.alpha = 1; 
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
         rectTransform.localScale = Vector3.zero;
-        rectTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.InOutSine).OnComplete(() => Time.timeScale = 0);
+        rectTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.InOutSine);
     }
 
     public override void HideMenu()

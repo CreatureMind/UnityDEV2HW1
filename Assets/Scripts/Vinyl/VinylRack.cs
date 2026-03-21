@@ -28,6 +28,7 @@ namespace UI.Vinyl
         [SerializeField] private Vinyl[] vinyls;
     
         public static event Action OnVinylRackOpened;
+        public static event Action OnVinylRackClosed;
     
         private Camera _camera;
         private bool _isClicked;
@@ -122,29 +123,30 @@ namespace UI.Vinyl
             
             if ((clickedObject & vinylRackLayer.value) != 0 && !_isClicked)
             {
-                _isClicked = true;
-                clickMeSign.gameObject.SetActive(false);
-                selectCam.Priority = newPriority;
-                OnVinylRackOpened?.Invoke();
+                ShowMenu();
+                UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
             }
         }
 
         public override void ShowMenu()
         {
-            
+            _isClicked = true;
+            clickMeSign.gameObject.SetActive(false);
+            selectCam.Priority = newPriority;
+            OnVinylRackOpened?.Invoke();
         }
 
         public override void HideMenu()
         {
-            EscapePressed();
+            selectCam.Priority = 0;
+            _isClicked = false;
+            OnVinylRackClosed?.Invoke();
         }
 
         public override void EscapePressed()
         {
-            selectCam.Priority = 0;
-            _isClicked = false;
-            OnVinylRackOpened?.Invoke();
-            UI_Manager.Instance.SwapMenu(MenuType.BarMenu);
+            HideMenu();
+            UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
         }
 
     }

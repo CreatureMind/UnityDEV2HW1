@@ -10,8 +10,8 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private List<BaseMenu> _menus = new List<BaseMenu>();
     private Dictionary<MenuType, BaseMenu> _menuDictionary = new Dictionary<MenuType, BaseMenu>();
     
-    private MenuType _currentMenu = MenuType.BarMenu;
-    private MenuType _lastMenu = MenuType.BarMenu;
+    private MenuType _currentMenu = MenuType.MainMenu;
+    private MenuType _lastMenu = MenuType.MainMenu;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class UI_Manager : MonoBehaviour
     
     private void Start()
     {
-        SetMenu(MenuType.BarMenu);
+        SetMenu(MenuType.MainMenu);
     }
     
     private void PlayerPressedEscape()
@@ -58,6 +58,7 @@ public class UI_Manager : MonoBehaviour
             menuToHide.HideMenu();
             _lastMenu = _currentMenu;
             _currentMenu = menuType;
+            Debug.Log(_currentMenu);
         }
     }
 
@@ -69,6 +70,14 @@ public class UI_Manager : MonoBehaviour
             menu.HideMenu();
         }
     }
+
+    public void ReturnToPreviousMenu()
+    {
+        SwapMenu(_lastMenu);
+    }
+    
+    public MenuType LastMenuType => _lastMenu;
+    public MenuType CurrentMenuType => _currentMenu;
 }
 
 
@@ -77,7 +86,7 @@ public class UI_Manager : MonoBehaviour
 public enum MenuType
 {
     MainMenu,
-    BarMenu,
+    CharacterSelectionMenu,
     PauseMenu,
     SongSelectionMenu,
     DifficultySelectionMenu,
