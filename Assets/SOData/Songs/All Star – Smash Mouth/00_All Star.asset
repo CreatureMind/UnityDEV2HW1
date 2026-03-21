@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Song
   songName: All Star
   preview: {fileID: 21300000, guid: 06db9a3ca89dad843b2f6230c15bbb89, type: 3}
-  audioClip: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: 5c27ac97b8f08d94cb6712d2de8bf6cc, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: 1e17366a6b8b64c4aa89f7705a15d5b3, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 104
+  patterns:
+  - {fileID: 11400000, guid: e45fa3ac59bd47c4bbdb06c040b9c74e, type: 2}
+  - {fileID: 11400000, guid: 068d7173e0002624e9fb45cde1a47b79, type: 2}
+  - {fileID: 11400000, guid: 9e78d352e8259ed47b468096ea02c7c0, type: 2}

@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0ec16e8adccbf409a0961a031f9bd8, type: 3}
   m_Name: 00_Goofy Goober Rock
   m_EditorClassIdentifier: Assembly-CSharp::Song
-  preview: {fileID: 21300000, guid: 94b03c9020c031d48abdf402ef38963c, type: 3}
   songName: Goofy Goober Rock
-  audioClip: {fileID: 8300000, guid: 163f6a52bb6ba5c4f8e864355867cec3, type: 3}
+  preview: {fileID: 21300000, guid: 94b03c9020c031d48abdf402ef38963c, type: 3}
+  audioClipNormal: {fileID: 8300000, guid: 163f6a52bb6ba5c4f8e864355867cec3, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: 1e4b64db505938648a588f6bac157620, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 156
+  bpm: 106
   patterns:
   - {fileID: 11400000, guid: 255b957e2364e0541bfb2c004b152d6e, type: 2}
   - {fileID: 11400000, guid: 03a5132c83a6e5f4f9714c95aba9b9bb, type: 2}

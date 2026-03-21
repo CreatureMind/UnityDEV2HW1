@@ -12,14 +12,384 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0d5a3a8d46c2b4283c99591f01054b, type: 3}
   m_Name: 03_Hard
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.DdrPattern
-  songName: RASPUTIN
-  bpm: 156
-  delay: 2.5
-  gain: 20
-  penalty: 30
-  arrowSpeedScaleFactor: 0.1
+  delay: 10
+  gain: 5
+  penalty: 10
+  arrowSpeedScaleFactor: 0.001
   steps:
   - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
     down: 1
     up: 0
     right: 0
@@ -27,6 +397,150 @@ MonoBehaviour:
     down: 0
     up: 0
     right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
   - left: 0
     down: 1
     up: 0
@@ -52,48 +566,8 @@ MonoBehaviour:
     up: 0
     right: 0
   - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
     down: 0
     up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 1
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 0
-    up: 1
     right: 0
   - left: 1
     down: 0
@@ -106,33 +580,17 @@ MonoBehaviour:
   - left: 0
     down: 0
     up: 0
-    right: 1
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 1
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 1
-    up: 0
     right: 0
   - left: 0
     down: 0
     up: 1
     right: 0
   - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 1
-    down: 0
+    down: 1
     up: 0
     right: 0
-  - left: 0
-    down: 1
+  - left: 1
+    down: 0
     up: 0
     right: 0
   - left: 0
@@ -142,10 +600,6 @@ MonoBehaviour:
   - left: 0
     down: 0
     up: 0
-    right: 1
-  - left: 1
-    down: 0
-    up: 0
     right: 0
   - left: 0
     down: 1
@@ -153,74 +607,6 @@ MonoBehaviour:
     right: 0
   - left: 0
     down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 1
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 1
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 1
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 1
-    down: 0
-    up: 0
-    right: 0
-  - left: 0
-    down: 1
-    up: 0
-    right: 0
-  - left: 0
-    down: 0
-    up: 0
-    right: 1
-  - left: 0
-    down: 1
     up: 0
     right: 0
   - left: 0
@@ -240,7 +626,103 @@ MonoBehaviour:
     up: 1
     right: 0
   - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
     down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
     up: 0
     right: 0
   - left: 0
@@ -255,7 +737,7 @@ MonoBehaviour:
     down: 0
     up: 0
     right: 1
-  - left: 1
+  - left: 0
     down: 0
     up: 0
     right: 0
@@ -267,6 +749,46 @@ MonoBehaviour:
     down: 0
     up: 0
     right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
   - left: 0
     down: 0
     up: 1
@@ -282,7 +804,119 @@ MonoBehaviour:
   - left: 0
     down: 0
     up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
     right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
   - left: 0
     down: 0
     up: 1
@@ -298,12 +932,612 @@ MonoBehaviour:
   - left: 0
     down: 0
     up: 0
-    right: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
   - left: 0
     down: 0
     up: 1
     right: 0
   - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
     down: 0
     up: 0
     right: 0
@@ -319,7 +1553,531 @@ MonoBehaviour:
     down: 0
     up: 1
     right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
   - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
     down: 0
     up: 0
     right: 0
@@ -335,7 +2093,231 @@ MonoBehaviour:
     down: 0
     up: 0
     right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
   - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 1
+  - left: 1
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 1
+    up: 0
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 1
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 1
+    right: 0
+  - left: 1
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 1
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
+    down: 0
+    up: 0
+    right: 0
+  - left: 0
     down: 0
     up: 0
     right: 0
