@@ -29,12 +29,12 @@ namespace UI.Vinyl
 
         private void OnEnable()
         {
-            VinylRack.OnSelected += ToggleSelected;
+            VinylRack.OnVinylRackOpened += ToggleVinylRackOpened;
         }
     
         private void OnDisable()
         {
-            VinylRack.OnSelected -= ToggleSelected;
+            VinylRack.OnVinylRackOpened -= ToggleVinylRackOpened;
         }
 
         private void Awake()
@@ -56,7 +56,7 @@ namespace UI.Vinyl
             }
         }
 
-        private void ToggleSelected()
+        private void ToggleVinylRackOpened()
         {
             _isSelected = !_isSelected;
             gameObject.layer = _isSelected ? 0 : 2;
@@ -85,6 +85,7 @@ namespace UI.Vinyl
             if (!_isSelected) return;
         
             OnSelectedSong?.Invoke(SongSo);
+            UI_Manager.Instance.SwapMenu(MenuType.DifficultySelectionMenu);
         }
     }
 }

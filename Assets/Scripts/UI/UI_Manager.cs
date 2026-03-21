@@ -10,8 +10,8 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private List<BaseMenu> _menus = new List<BaseMenu>();
     private Dictionary<MenuType, BaseMenu> _menuDictionary = new Dictionary<MenuType, BaseMenu>();
     
-    private MenuType _currentMenu;
-    private MenuType _lastMenu;
+    private MenuType _currentMenu = MenuType.BarMenu;
+    private MenuType _lastMenu = MenuType.BarMenu;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class UI_Manager : MonoBehaviour
     
     private void Start()
     {
-        SetMenu(MenuType.DifficultySelectionMenu);
+        SetMenu(MenuType.BarMenu);
     }
     
     private void PlayerPressedEscape()
@@ -51,18 +51,14 @@ public class UI_Manager : MonoBehaviour
     
     public void SwapMenu(MenuType menuType)
     {
-        if (_currentMenu == menuType)
-            return;
-        
         if (_menuDictionary.TryGetValue(menuType, out BaseMenu menuToShow)
             && _menuDictionary.TryGetValue(_currentMenu, out BaseMenu menuToHide))
         {
             menuToShow.ShowMenu();
             menuToHide.HideMenu();
+            _lastMenu = _currentMenu;
+            _currentMenu = menuType;
         }
-
-        _lastMenu = _currentMenu;
-        _currentMenu = menuType;
     }
 
     private void InitDictionary()
@@ -70,6 +66,7 @@ public class UI_Manager : MonoBehaviour
         foreach (BaseMenu menu in _menus)
         {
             _menuDictionary.TryAdd(menu.ThisMenuType, menu);
+            menu.HideMenu();
         }
     }
 }

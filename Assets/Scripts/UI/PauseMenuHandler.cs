@@ -41,8 +41,6 @@ namespace UI
             musicVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMusicVolume(value));
             sFXVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetSFXVolume(value));  
             */
-            
-            HideMenu();
         }
         
         private void ResumeOnClick()
