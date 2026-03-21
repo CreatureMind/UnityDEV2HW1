@@ -15,11 +15,14 @@ MonoBehaviour:
   songID: gangnam_style
   songName: Gangnam Style
   preview: {fileID: 21300000, guid: a9592f2350e26754081dbff95ce7acf8, type: 3}
-  audioClipNormal: {fileID: 0}
-  audioClipMeme: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: da1a4fa1ad03fcd4e945af73232424cf, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: f74d2a370b6f84544993f943b7b0e5f4, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 132
+  patterns:
+  - {fileID: 11400000, guid: 94f99bd064d3c3046b701d3584b1633f, type: 2}
+  - {fileID: 11400000, guid: a03b88833824418499f8c2cc4482b19f, type: 2}
+  - {fileID: 11400000, guid: e031df07d771336489ec2e2d87f0c42b, type: 2}

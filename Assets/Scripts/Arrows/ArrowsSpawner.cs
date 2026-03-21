@@ -30,7 +30,7 @@ public class ArrowsSpawner : MonoBehaviour
     
     private bool isPaused = false;
 
-    public static event Action OnSongEnded;
+    public static event Action<string,int> OnSongEnded;
     public static event Action OnBeat;
 
     void OnEnable()
@@ -121,7 +121,7 @@ public class ArrowsSpawner : MonoBehaviour
 
         ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
         
-        OnSongEnded?.Invoke();
+        OnSongEnded?.Invoke(songID, songDifficulty);
     }
 }
 
