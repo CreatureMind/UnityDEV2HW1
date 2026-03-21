@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0d5a3a8d46c2b4283c99591f01054b, type: 3}
   m_Name: 03_Hard
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.DdrPattern
-  songName: Rasputin
-  bpm: 156
   delay: 2.5
   gain: 20
   penalty: 30

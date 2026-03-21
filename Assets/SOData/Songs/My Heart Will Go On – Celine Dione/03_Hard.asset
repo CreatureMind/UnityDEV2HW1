@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0d5a3a8d46c2b4283c99591f01054b, type: 3}
   m_Name: 03_Hard
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.DdrPattern
-  delay: 10
-  gain: 5
-  penalty: 10
-  arrowSpeedScaleFactor: 0.001
+  delay: 5
+  gain: 20
+  penalty: 30
+  arrowSpeedScaleFactor: 0.1
   steps:
   - left: 0
     down: 0

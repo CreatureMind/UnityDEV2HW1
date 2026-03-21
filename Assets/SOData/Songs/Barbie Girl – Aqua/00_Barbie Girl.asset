@@ -15,11 +15,14 @@ MonoBehaviour:
   songID: barbie_girl
   songName: Barbie Girl
   preview: {fileID: 21300000, guid: c9ff432d61c74f8458a513e951ac4cec, type: 3}
-  audioClipNormal: {fileID: 0}
-  audioClipMeme: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: b44c567028e37b8428706ea78ff31e5c, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: 70809afff861d0f4aa0bc22ab1e7f978, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 130
+  patterns:
+  - {fileID: 11400000, guid: e1f2e0a9de03b7047aa55fb001bef783, type: 2}
+  - {fileID: 11400000, guid: e7f05c13f1d1bf042babc54d096485e3, type: 2}
+  - {fileID: 11400000, guid: 34ea99209fed58443a540130665d0c90, type: 2}

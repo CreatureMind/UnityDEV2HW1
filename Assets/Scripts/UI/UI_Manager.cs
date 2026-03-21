@@ -91,4 +91,5 @@ public enum MenuType
     SongSelectionMenu,
     DifficultySelectionMenu,
     InGameMenu,
+    NewHighScore
 }

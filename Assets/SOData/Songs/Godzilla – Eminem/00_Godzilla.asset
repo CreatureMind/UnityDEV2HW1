@@ -15,11 +15,14 @@ MonoBehaviour:
   songID: godzilla
   songName: Godzilla
   preview: {fileID: 21300000, guid: b73c08257a6e5fb42b7197fbb80a46f5, type: 3}
-  audioClipNormal: {fileID: 0}
-  audioClipMeme: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: 54b2511b6e65eb04f848f77d816b4acc, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: 77e5c9ae85c26f6468b5baaeec543c8d, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 166
+  patterns:
+  - {fileID: 11400000, guid: a8c04a96391c91e48b1b2434c0d17f46, type: 2}
+  - {fileID: 11400000, guid: 7ed4e647477678548b02b84c51cf864b, type: 2}
+  - {fileID: 11400000, guid: 6ac4e97a3feb96f4ea7ea2e34a06d138, type: 2}
