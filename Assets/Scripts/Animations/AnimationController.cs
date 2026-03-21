@@ -32,7 +32,7 @@ public class AnimationController : MonoBehaviour
         {
             foreach (var character in characters)
             {
-                if (character.Equals(selectedCharacter))
+                if (character.characterOptions != selectedCharacter) continue;
                     return character.characterAnimator;
             }
 

@@ -32,12 +32,12 @@ namespace UI
         
         public void LoadScore(string songID, int songDifficulty)
         {
-            SaveManager.LoadSaveData();
-            var currentScore = ScoreManager.Instance.CurrentScore;
-            var savedScore = SaveManager.saveData.songsData.ContainsKey()
-            currentScoreText.text = currentScore.ToString();
-            newScoreText.text = newScore.ToString();
-            ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+            // SaveManager.LoadSaveData();
+            // var currentScore = ScoreManager.Instance.CurrentScore;
+            // var savedScore = SaveManager.saveData.songsData.ContainsKey()
+            // currentScoreText.text = currentScore.ToString();
+            // newScoreText.text = newScore.ToString();
+            // ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
         }
         
         public override void ShowMenu()

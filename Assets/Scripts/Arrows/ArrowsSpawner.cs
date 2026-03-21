@@ -35,12 +35,19 @@ public class ArrowsSpawner : MonoBehaviour
 
     void OnEnable()
     {
-        //DifficultyPopupManager.OnSelected += LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected += LoadSongData;
+        InGameUI.OnMenuClosed += SongEndedUnload;
+    }
+
+    private void SongEndedUnload()
+    {
+        StopAllCoroutines();
+        SoundManager.instance.StopMusic(songName);
     }
 
     void OnDisable()
     {
-        //DifficultyPopupManager.OnSelected -= LoadSongData;
+        DifficultyPopupManager.OnDifficultySelected -= LoadSongData;
     }
 
     private void Start()

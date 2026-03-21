@@ -72,6 +72,7 @@ public class HpBar : MonoBehaviour
         {
             SoundManager.instance.StopAllMusic();
             UI_Manager.Instance.SwapMenu(MenuType.DifficultySelectionMenu);
+            isLoaded = false;
         }
     }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cinemachine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -23,6 +24,9 @@ public class InGameUI : BaseMenu
 
     [Header("Compliments")]
     [SerializeField] private List<Compliments> compliments;
+    
+    [Header("Camera")]
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
     
     private readonly List<Image> _spawnedDigits = new();
     private Dictionary<Transform, Vector3> _originalScales = new();
@@ -137,6 +141,7 @@ public class InGameUI : BaseMenu
         else
         {
             OnMenuOpened?.Invoke();
+            virtualCamera.Priority = 100;
         }
     }
 
@@ -150,6 +155,7 @@ public class InGameUI : BaseMenu
         {
             canvasGroup.alpha = 0f;
             OnMenuClosed?.Invoke();
+            virtualCamera.Priority = 0;
         }
     }
 

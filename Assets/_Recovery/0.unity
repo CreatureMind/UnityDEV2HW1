@@ -1909,17 +1909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachinePipeline
---- !u!114 &1180862362 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 455251669413211542, guid: cf7e6fe9ef7f0674eb79c68e30650b7b, type: 3}
-  m_PrefabInstance: {fileID: 2146334685}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineVirtualCamera
 --- !u!1001 &1251882378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2073,7 +2062,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 337717735161567878, guid: 82e80d6e689fd2a46aed2892e883b038, type: 3}
       propertyPath: m_Name
-      value: In_Game_UI
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 730795175128245295, guid: 82e80d6e689fd2a46aed2892e883b038, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2222,7 +2211,7 @@ PrefabInstance:
     - target: {fileID: 7045611205528065716, guid: 82e80d6e689fd2a46aed2892e883b038, type: 3}
       propertyPath: virtualCamera
       value: 
-      objectReference: {fileID: 1180862362}
+      objectReference: {fileID: 1901208466}
     - target: {fileID: 7491210034969219485, guid: 82e80d6e689fd2a46aed2892e883b038, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3306,6 +3295,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a854f1e2082c94cba90433bbe14350, type: 3}
+--- !u!114 &1901208466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 455251669413211542, guid: cf7e6fe9ef7f0674eb79c68e30650b7b, type: 3}
+  m_PrefabInstance: {fileID: 2146334685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineVirtualCamera
 --- !u!1 &1925322760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,11 +3373,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1753232478415629910, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 520.2538
       objectReference: {fileID: 0}
     - target: {fileID: 1753232478415629910, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 366.9375
       objectReference: {fileID: 0}
     - target: {fileID: 1753232478415629910, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3414,10 +3414,6 @@ PrefabInstance:
     - target: {fileID: 3507150355134386688, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3507150355134386688, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3507150355134386688, guid: 01aa8cdde72c41948864f71bce485d2e, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionId
@@ -3515,14 +3511,6 @@ PrefabInstance:
     - target: {fileID: 4193740916487357231, guid: cf7e6fe9ef7f0674eb79c68e30650b7b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7982925026362840749, guid: cf7e6fe9ef7f0674eb79c68e30650b7b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7982925026362840749, guid: cf7e6fe9ef7f0674eb79c68e30650b7b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

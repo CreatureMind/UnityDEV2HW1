@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 1574565435993269837}
   - component: {fileID: 6883347617306353956}
   - component: {fileID: 7045611205528065716}
+  - component: {fileID: 5515620598001770152}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -173,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 0
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   thisMenuType: 5
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 5515620598001770152}
   scoreText: {fileID: 7906201930861240257}
   scoreNumText: {fileID: 4926435982147264841}
   comboParent: {fileID: 4690164196472115978}
@@ -244,6 +245,18 @@ MonoBehaviour:
     image: {fileID: 4554037272841685471}
   - type: 4
     image: {fileID: 7968632205171486698}
+--- !u!225 &5515620598001770152
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337717735161567878}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &445182970964185182
 GameObject:
   m_ObjectHideFlags: 0

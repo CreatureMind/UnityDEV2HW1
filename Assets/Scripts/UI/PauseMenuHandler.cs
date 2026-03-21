@@ -63,7 +63,7 @@ namespace UI
             
             if (UI_Manager.Instance.LastMenuType != MenuType.MainMenu)
             {
-                // load main menu scene here
+                UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
             }
         }
 
