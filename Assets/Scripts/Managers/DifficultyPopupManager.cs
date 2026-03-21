@@ -35,9 +35,7 @@ public class DifficultyPopupManager : BaseMenu
         easyButton.onClick.AddListener(() => DifficultySelected(0));
         mediumButton.onClick.AddListener(() => DifficultySelected(1));
         hardButton.onClick.AddListener(() => DifficultySelected(2));
-        quitButton.onClick.AddListener(EscapePressed);
-        
-        HideMenu();
+        quitButton.onClick.AddListener(EscapePressed); 
     }
     
     private void DifficultySelected(int difficulty)
@@ -55,11 +53,12 @@ public class DifficultyPopupManager : BaseMenu
 
     public override void ShowMenu()
     {
+        Time.timeScale = 0;
         canvasGroup.alpha = 1; 
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
         rectTransform.localScale = Vector3.zero;
-        rectTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.InOutSine).OnComplete(() => Time.timeScale = 0);
+        rectTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.InOutSine);
     }
 
     public override void HideMenu()

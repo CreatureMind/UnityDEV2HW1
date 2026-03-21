@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0ec16e8adccbf409a0961a031f9bd8, type: 3}
   m_Name: 00_Rasputin
   m_EditorClassIdentifier: Assembly-CSharp::Song
+  songID: rasputin
   songName: Rasputin
   preview: {fileID: 21300000, guid: de8909ad9d55a214082389490ef89f6a, type: 3}
-  audioClip: {fileID: 8300000, guid: 9b9a57785fff11d4c8972bb3509825fd, type: 3}
+  audioClipNormal: {fileID: 0}
+  audioClipMeme: {fileID: 0}
   volume: 0.4
   pitch: 1
   loop: 0

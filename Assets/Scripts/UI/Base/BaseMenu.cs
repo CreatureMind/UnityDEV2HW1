@@ -8,6 +8,7 @@ namespace UI.Base
         [SerializeField] protected MenuType thisMenuType;
         [SerializeField] protected CanvasGroup canvasGroup;
         
+        
         public abstract void ShowMenu();
         public abstract void HideMenu();
         public abstract void EscapePressed();

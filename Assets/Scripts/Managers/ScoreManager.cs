@@ -117,4 +117,39 @@ public class ScoreManager : Singleton<ScoreManager>
 
         OnComboChangedEvent.Invoke(_currentCombo);
     }
+
+    public void SaveHighScoreFor(string songID, int difficulty)
+    {
+        SaveManager.LoadSaveData();
+
+        SongSaveData songData;
+
+        if (!SaveManager.saveData.songsData.ContainsKey(songID))
+        {
+            songData = new();
+            songData.scoreForDifficulty.Add(difficulty, _currentScore);
+
+            SaveManager.saveData.songsData.Add(songID, songData);
+
+            SaveManager.WriteSaveData();
+            return;
+        }
+
+        songData = SaveManager.saveData.songsData[songID];
+
+        if (!songData.scoreForDifficulty.ContainsKey(difficulty))
+        {
+            songData.scoreForDifficulty.Add(difficulty, _currentScore);
+
+            SaveManager.WriteSaveData();
+            return;
+        }
+
+        if (songData.scoreForDifficulty[difficulty] < _currentScore)
+        {
+            songData.scoreForDifficulty[difficulty] = _currentScore;
+            
+            SaveManager.WriteSaveData();
+        }
+    }
 }

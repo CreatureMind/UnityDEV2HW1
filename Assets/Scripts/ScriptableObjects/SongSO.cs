@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 [CreateAssetMenu(fileName = "Song", menuName = "DDR/Song")]
 public class SongSO : ScriptableObject
 {
+    public string songID;
     public string songName;
     public Sprite preview;
     public AudioClip audioClipNormal;

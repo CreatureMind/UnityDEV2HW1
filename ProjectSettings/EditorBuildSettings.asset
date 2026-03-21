@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/tomerto + dancer.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/YoavUILoop.unity
+    guid: ae27fceff8295c54fa207b6561cdb8b0
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 032af2f45c97d584e85745f931e22be2
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b6918f1ba737dcf4e8949fcd2fdeda13, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

@@ -2,6 +2,7 @@ using System;
 using Cinemachine;
 using DG.Tweening;
 using TMPro;
+using UI.Base;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -9,7 +10,7 @@ using UnityEngine.Serialization;
 
 namespace UI.Vinyl
 {
-    public class VinylRack : MonoBehaviour, IPointerClickHandler
+    public class VinylRack : BaseMenu, IPointerClickHandler
     {
         [SerializeField] private SpriteRenderer clickMeSign;
         [SerializeField] private CinemachineVirtualCamera selectCam;
@@ -26,7 +27,8 @@ namespace UI.Vinyl
         [SerializeField] private SongWraperSO songWraperSo;
         [SerializeField] private Vinyl[] vinyls;
     
-        public static event Action OnSelected;
+        public static event Action OnVinylRackOpened;
+        public static event Action OnVinylRackClosed;
     
         private Camera _camera;
         private bool _isClicked;
@@ -121,18 +123,31 @@ namespace UI.Vinyl
             
             if ((clickedObject & vinylRackLayer.value) != 0 && !_isClicked)
             {
-                _isClicked = true;
-                clickMeSign.gameObject.SetActive(false);
-                selectCam.Priority = newPriority;
-                OnSelected?.Invoke();
+                ShowMenu();
+                UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
             }
         }
-        
-        private void OnEscape()
+
+        public override void ShowMenu()
+        {
+            _isClicked = true;
+            clickMeSign.gameObject.SetActive(false);
+            selectCam.Priority = newPriority;
+            OnVinylRackOpened?.Invoke();
+        }
+
+        public override void HideMenu()
         {
             selectCam.Priority = 0;
             _isClicked = false;
-            OnSelected?.Invoke();
+            OnVinylRackClosed?.Invoke();
         }
+
+        public override void EscapePressed()
+        {
+            HideMenu();
+            UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
+        }
+
     }
 }

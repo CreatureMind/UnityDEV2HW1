@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: cb944e6e532848440a97f269bbec3e1d
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material003
+    second: {fileID: 2100000, guid: 9015ce0c11119114aaf0d48ac13d81b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material006
+    second: {fileID: 2100000, guid: 17cb7884b7e7fab4e96ab85735af6769, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material007
+    second: {fileID: 2100000, guid: 32ba52f10e7ba1a479191d6cd8307772, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material011
+    second: {fileID: 2100000, guid: a70feca021aa15746990c51f1f6d77fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material012
+    second: {fileID: 2100000, guid: a152de17366618241bd278e784ead8ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material013
+    second: {fileID: 2100000, guid: ddef177baf104ed4f8012ad563aa49d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material015
+    second: {fileID: 2100000, guid: 0a8cd71db7cc089458c13f51b3c05906, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model001_Material024
+    second: {fileID: 2100000, guid: e062d4d1ce897b24fb940978e9e3c95a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model004_Material001
+    second: {fileID: 2100000, guid: 79bc4c9dac28ca24f995da0ce4b05147, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model044_Material001
+    second: {fileID: 2100000, guid: c4750f3277cdc7841a090ddff3b4a578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model044_Material001.001
+    second: {fileID: 2100000, guid: 67fc1c31e5d7e8d45a68da1414f24116, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Model044_Material001.002
+    second: {fileID: 2100000, guid: 7b590f42187b2ed4b9b6ef6f0f6e3aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark
+    second: {fileID: 2100000, guid: cac8e39029272ad4fb72fda4d8c208da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark.001
+    second: {fileID: 2100000, guid: 042aadc07c0b0894999aa676ed98f03f, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FurnitureCouch002a
+    second: {fileID: 2800000, guid: 0232a4d69134efd4a86c08d59dbcc1a9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FurnitureDrawer002a
+    second: {fileID: 2800000, guid: 7aa787c2d0dec8d439505e538535750e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FurnitureTable003a
+    second: {fileID: 2800000, guid: 7bcee4215ada34640bb93e4c37a544df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FurnitureToletSink001a
+    second: {fileID: 2800000, guid: e3d17b3502910f341b4ad8a7360fe9b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FurnitureWoodDrawers001a
+    second: {fileID: 2800000, guid: 3936f97a19a40b948b9b69fc5dc1d8f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pencil
+    second: {fileID: 2800000, guid: 9c2ce3e8def3d4b479a47a1065db73d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0002_0
+    second: {fileID: 2800000, guid: 62864e975b697ce42b8d42efc9c05158, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: alarm_clock_on
+    second: {fileID: 2800000, guid: f453bb160b138f74aa38346373f410ce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_10
+    second: {fileID: 2800000, guid: 8228db3d55c612e4f890d7d83f9ba30a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_11
+    second: {fileID: 2800000, guid: 83989763af395b4439ce7207287680d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_12
+    second: {fileID: 2800000, guid: 5929003fbaf3506439f9aa96613754b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_13
+    second: {fileID: 2800000, guid: 21542540113484544aabe97f904471b3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_14
+    second: {fileID: 2800000, guid: 8228117c8bfd3db4ab110a83edc1370f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_16
+    second: {fileID: 2800000, guid: a3c390db9ff3cde4b9e9dc719d2279bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_18
+    second: {fileID: 2800000, guid: f64592808871dba4b9dafd4d6f80c635, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_19
+    second: {fileID: 2800000, guid: 1aad3dbf3ad390d4b8540f398858ba55, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_2
+    second: {fileID: 2800000, guid: c5919065d0f0e6e4e93c49b1603f168e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_20
+    second: {fileID: 2800000, guid: ad1d89693000182488df580ded0fe012, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_21
+    second: {fileID: 2800000, guid: 7544da104ddab8246a4daa9ca272ea00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_22
+    second: {fileID: 2800000, guid: b4c394969e64e9a44a4a7e6d5469c94e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_25
+    second: {fileID: 2800000, guid: 45b6395351b005e45871af9dc523a494, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_26
+    second: {fileID: 2800000, guid: b5e7dc43e8510f241ae6cb2f4045e1d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_27
+    second: {fileID: 2800000, guid: cd7d98b0b377ebe4ab686db311d4c240, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_28
+    second: {fileID: 2800000, guid: ca6da23d8f764d345a27083585d04fff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_29
+    second: {fileID: 2800000, guid: 012090b112309514d86937cfa6685770, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_3
+    second: {fileID: 2800000, guid: 43a717b9d9f73b744929a6f1a4eb45d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_30
+    second: {fileID: 2800000, guid: f8fc8a858a8ab1c4899b8b7b53ee0b72, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_35
+    second: {fileID: 2800000, guid: 6f988eeeb1045994880e18ae5146dffe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_37
+    second: {fileID: 2800000, guid: e441fdc994c76c042b6e8c5e3df21d09, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_4
+    second: {fileID: 2800000, guid: b03e040491a0d304285ce74dd66a2b2a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_42
+    second: {fileID: 2800000, guid: 5faef7087bbab2340b4f002e5efe70e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_43
+    second: {fileID: 2800000, guid: 21f465f2eb0506e4ba15c5114f623952, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_44
+    second: {fileID: 2800000, guid: 5ae02c107730a8c47a11a99460fe61c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_46
+    second: {fileID: 2800000, guid: 02bf154c48fd87a48bfd2ea93a630799, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_5
+    second: {fileID: 2800000, guid: 8d3592993614bed4e8811f9400d3b17f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_50
+    second: {fileID: 2800000, guid: 79279644d3d245440a999bfbcbf7abe5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_52
+    second: {fileID: 2800000, guid: d155618b9f5baaf469223257460cd041, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_7
+    second: {fileID: 2800000, guid: 1e27dede8612be84885df3e290e491a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_8
+    second: {fileID: 2800000, guid: dac8eaa538fdf3f4690167c200a916b1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am_apartment_texture_9
+    second: {fileID: 2800000, guid: fcce899fcc6f85542bf96952c440f3ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body1
+    second: {fileID: 2800000, guid: 234d5ed658055ae43a2fca0a25c6a49d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: body2
+    second: {fileID: 2800000, guid: 23103350d6114b3419ae51bb708fdd6e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bookcase_small
+    second: {fileID: 2800000, guid: 8f4d5d99201dd93499da84d9420aaba4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bookshelf1
+    second: {fileID: 2800000, guid: fb30b4226aa53be4798d9bb544460cdf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brushed_bump
+    second: {fileID: 2800000, guid: ec82d08f41622cc49b1cd12800bff641, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bts_chair
+    second: {fileID: 2800000, guid: a6b1adcc552e3984c8c52aded80fecb9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bumpmap_alt
+    second: {fileID: 2800000, guid: 2d547ba22edf9014f9d156b8ea36e90e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bumpmap_flat
+    second: {fileID: 2800000, guid: 9839bb0777ad50e46bd18bab0c488828, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cardboard_box001a
+    second: {fileID: 2800000, guid: 7af0e8e056c44414393ec64944ab85f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cardboard_box003a_texture_0
+    second: {fileID: 2800000, guid: 7a936f93e11d37543a1fa3c7f738d978, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cardboard_boxes_texture
+    second: {fileID: 2800000, guid: f9ea6519fc408e54da521d5c8128a408, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_office2
+    second: {fileID: 2800000, guid: ae23b9024e66a1243914c2f3c208c54f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: closet_clothes
+    second: {fileID: 2800000, guid: 17031655857d2274b95f2ba0cfdaf148, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cs_office_texture_155
+    second: {fileID: 2800000, guid: 1af4597e449f6444bacddcc07da630c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: demotivator_officespace
+    second: {fileID: 2800000, guid: ae670da1530c38247bc241ce3529b335, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: dm_rms_honourable_texture_51
+    second: {fileID: 2800000, guid: fa8ab52d298e0b64e93dc2cc92dfcb10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: door01a
+    second: {fileID: 2800000, guid: b0a4a97147430b343b5402e73755321f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabric_tightweave_normal
+    second: {fileID: 2800000, guid: 2c2a68131ab8be94e9013fbd527e37af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: file_box
+    second: {fileID: 2800000, guid: c0aa07678be50e749bac20f41c6df461, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: furniture_chair03a
+    second: {fileID: 2800000, guid: ab9ae517c7ef22d46b04b0e4123edfeb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: furniture_couch01a
+    second: {fileID: 2800000, guid: 781aee65cec54134ca68cca17fec2a7a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: furniture_desk01a
+    second: {fileID: 2800000, guid: ccfd8fc1b9793d54889a06734fee0680, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: furniture_lamp_stool01a
+    second: {fileID: 2800000, guid: 1346d1e6ac058f642a5d5a08ebb1e22b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: intel
+    second: {fileID: 2800000, guid: 8bbcd22a17277de49b20fe1e4da557b2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: keyz
+    second: {fileID: 2800000, guid: 84a3fd2cfc83bb447b4692ee71f2abb8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: keyz_spec
+    second: {fileID: 2800000, guid: 475a560edbdffe04a9941868d7105339, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lab_objects03
+    second: {fileID: 2800000, guid: e145e5420c87c044f8b3e9655d0abff0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mattress_clean
+    second: {fileID: 2800000, guid: a4fe8208437d2a94091b46cb96089da6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2800000, guid: 7d35ce28e62e6f14690c92bdadd955d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: metalbase
+    second: {fileID: 2800000, guid: 4a8dcb3fadc277e4ca525dc98cd3647d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: notepad2
+    second: {fileID: 2800000, guid: 1b571d64657309349b4ac35bc57ecd9e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: offpaintinge
+    second: {fileID: 2800000, guid: 81bdcd778bd02b74682e79028e3d6a6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: phone
+    second: {fileID: 2800000, guid: 94d90a124e407fb47bf2a8c8356f8167, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: printer
+    second: {fileID: 2800000, guid: 523db762822933149a0575d023873a8c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: screen2
+    second: {fileID: 2800000, guid: 8573f8fd9d52a8a4c95e53df540fb8ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: trash_can
+    second: {fileID: 2800000, guid: 586ec96fc772e114b9273878f86f0fe9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tv
+    second: {fileID: 2800000, guid: 2907eca4bf76c7e49a3dff5e666df173, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tvanimstatic
+    second: {fileID: 2800000, guid: ba78d598be17aee49962dcf9ad23fcc0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: woodfurniture01
+    second: {fileID: 2800000, guid: 6dc011414aaab6f4caedb8efab3a0859, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

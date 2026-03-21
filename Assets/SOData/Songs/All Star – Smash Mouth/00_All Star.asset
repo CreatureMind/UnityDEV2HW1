@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e0ec16e8adccbf409a0961a031f9bd8, type: 3}
   m_Name: 00_All Star
   m_EditorClassIdentifier: Assembly-CSharp::Song
+  songID: all_star
   songName: All Star
   preview: {fileID: 21300000, guid: 06db9a3ca89dad843b2f6230c15bbb89, type: 3}
-  audioClip: {fileID: 0}
+  audioClipNormal: {fileID: 0}
+  audioClipMeme: {fileID: 0}
   volume: 0.4
   pitch: 1
   loop: 0

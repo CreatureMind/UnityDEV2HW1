@@ -3,6 +3,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-100)]
 public class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
+    private static bool instanceCallCreation = false;
     private static T _instance;
     public static T Instance
     {
@@ -11,14 +12,15 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
             if (_instance == null)
             {
                 if (_quitting) return null;
+                instanceCallCreation = true;
                 var createdSingleton = new GameObject().AddComponent<T>();
+                instanceCallCreation = false;
                 if (!createdSingleton.DontDestoryOnLoad)
                 {
                     Destroy(createdSingleton);
                     return null;
                 }
-
-                createdSingleton.InitilizeSingleton();
+                else createdSingleton.InitilizeSingleton();
             }
 
             return _instance;
@@ -38,6 +40,8 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
             return;
         }
 
+        if (instanceCallCreation && !DontDestoryOnLoad) return;
+        
         InitilizeSingleton();
     }
 

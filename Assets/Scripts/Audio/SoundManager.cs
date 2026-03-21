@@ -53,7 +53,6 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.outputAudioMixerGroup = sounds[i].mixerGroup;
 
         }
-
     }
 
     public AudioClip GetAudioClip(string name)

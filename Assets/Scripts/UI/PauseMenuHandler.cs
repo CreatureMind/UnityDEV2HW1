@@ -42,26 +42,46 @@ namespace UI
             
             
             HideMenu();
+            /*
+            add these listeners to the sliders once the sound manager is implemented
+            masterVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMasterVolume(value));
+            musicVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMusicVolume(value));
+            sFXVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetSFXVolume(value));  
+            */
         }
         
         private void ResumeOnClick()
         {
-            StartCoroutine(CountDown());
+            if(UI_Manager.Instance.LastMenuType == MenuType.MainMenu)
+            {
+                MainMenuOnClick();
+                HideMenu();
+            }
+            else
+            {
+                StartCoroutine(CountDown());
+            }
         }
-
+        
         private void MainMenuOnClick()
         {
             Time.timeScale = 1;
-            menuTransform.DOShakePosition(0.2f, 15, 40).SetUpdate(true).OnComplete(() => menuTransform.localScale = Vector3.zero);
+            menuTransform.DOShakePosition(0.2f, 15, 40).SetUpdate(true).OnComplete(() => UI_Manager.Instance.SwapMenu(MenuType.MainMenu));
+            
+            if (UI_Manager.Instance.LastMenuType != MenuType.MainMenu)
+            {
+                // load main menu scene here
+            }
         }
 
         public override void ShowMenu()
         {
+            Time.timeScale = 0;
             canvasGroup.alpha = 1; 
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
             menuTransform.localScale = Vector3.zero;
-            menuTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.OutBack).OnComplete(()=> Time.timeScale = 0);
+            menuTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.OutBack);
         }
 
         public override void HideMenu()
@@ -92,7 +112,7 @@ namespace UI
             counterImage.gameObject.SetActive(false);
             Time.timeScale = 1;
             
-            UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
+            UI_Manager.Instance.ReturnToPreviousMenu();
         }
 
     }
