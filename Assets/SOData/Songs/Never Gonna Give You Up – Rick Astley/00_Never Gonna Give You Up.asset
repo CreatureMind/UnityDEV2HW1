@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Song
   songName: Never Gonna Give You Up
   preview: {fileID: 21300000, guid: e59db97e195cbeb4a9446e1f4343facb, type: 3}
-  audioClip: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: 9a050925cf6f285478c122238538e7ac, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: 8325f4f4c9537ef4493a3282018b279a, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 114
+  patterns:
+  - {fileID: 11400000, guid: d51e601d6f2e4b34f92a9c1e000e409a, type: 2}
+  - {fileID: 11400000, guid: 9d44d02c77c52b545899c9d778d69e75, type: 2}
+  - {fileID: 11400000, guid: 812f2641a21e27d4dabe736d060514d2, type: 2}

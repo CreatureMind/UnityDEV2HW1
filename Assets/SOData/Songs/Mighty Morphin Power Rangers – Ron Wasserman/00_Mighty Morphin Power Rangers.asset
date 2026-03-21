@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0ec16e8adccbf409a0961a031f9bd8, type: 3}
+  m_Name: 00_Mighty Morphin Power Rangers
+  m_EditorClassIdentifier: Assembly-CSharp::Song
+  songName: Mighty Morphin Power Rangers
+  preview: {fileID: 21300000, guid: 8a01cea1be27ddb4881d75aed02d6b9a, type: 3}
+  audioClipNormal: {fileID: 8300000, guid: 7afaa2cd401bcc54aa361742076fd944, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: f30a88498be1e76458dc6976da4fa775, type: 3}
+  volume: 0.4
+  pitch: 1
+  loop: 0
+  playOnAwake: 1
+  bpm: 188
+  patterns:
+  - {fileID: 11400000, guid: 911a7f9aa52d40a409fd44850a26d614, type: 2}
+  - {fileID: 11400000, guid: 6378d7334fac69e4bb23b265afe603b1, type: 2}
+  - {fileID: 11400000, guid: cdc3cc322a7f8c84489f7aade5a9f6ef, type: 2}

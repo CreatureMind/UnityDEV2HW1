@@ -44,7 +44,6 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.loop = sounds[i].loop;
             sounds[i].source.playOnAwake = sounds[i].playOnAwake;
         }
-
     }
 
     public AudioClip GetAudioClip(string name)

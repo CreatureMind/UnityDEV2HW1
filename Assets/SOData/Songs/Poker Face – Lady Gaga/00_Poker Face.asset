@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Song
   songName: Poker Face
   preview: {fileID: 21300000, guid: ec37b01b5af21c84cb1f5102a820d96a, type: 3}
-  audioClip: {fileID: 0}
+  audioClipNormal: {fileID: 8300000, guid: 24a3d0442455ba846a3ab206adb628a5, type: 3}
+  audioClipMeme: {fileID: 8300000, guid: d5a6a716e0a6d8f43994c4c715a11ed0, type: 3}
   volume: 0.4
   pitch: 1
   loop: 0
   playOnAwake: 1
-  bpm: 120
-  patterns: []
+  bpm: 138
+  patterns:
+  - {fileID: 11400000, guid: 4c072c8a88aa021469188a5068470adb, type: 2}
+  - {fileID: 11400000, guid: 9504d8400ca0a024cbb7eb23c6a2d2db, type: 2}
+  - {fileID: 11400000, guid: 6ae2ae21e23f3534f811a7ceaab72841, type: 2}
