@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BarMusic
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffectSO
   soundName: BarMusic
-  audioClipNormal: {fileID: 8300000, guid: f6bdd284c45db694288a77aa2fbdce22, type: 3}
+  audioClipNormal: {fileID: 8300000, guid: 9f8b015980ed6184fb3df5839b1f862f, type: 3}
   mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
   volume: 2
   pitch: 1
