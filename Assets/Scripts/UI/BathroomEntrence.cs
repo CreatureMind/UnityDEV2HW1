@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class BathroomEntrence : BaseMenu, IPointerClickHandler
 {
     public static BathroomEntrence Instance;
-    private const string SceneName = "YoavUILoop";
+    private const string SceneName = "MainScene";
     public void Awake()
     {
         if (Instance == null)
