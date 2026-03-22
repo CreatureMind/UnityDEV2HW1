@@ -147,6 +147,7 @@ namespace UI.Vinyl
         {
             HideMenu();
             UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
+            SoundManager.instance.StopAllSounds();
             SoundManager.instance.PlayVFX("BarAmbiance");
             SoundManager.instance.PlayVFX("BarMusic");
         }
