@@ -130,6 +130,13 @@ namespace Arrows
                 }
             }
         
+            yield return new WaitForSeconds(perPatternDelay);
+            SoundManager.instance.PlayVFX("MissionPassed");
+            ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+            OnSongEnded?.Invoke();
+            SoundManager.instance.PlayVFX("BarAmbiance");
+            SoundManager.instance.PlayVFX("BarMusic");
+    
             SoundManager.instance.StopMusic(_songName);
             yield return new WaitForSeconds(_perPatternDelay);
 

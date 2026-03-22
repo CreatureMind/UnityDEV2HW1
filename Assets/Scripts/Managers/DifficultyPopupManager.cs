@@ -40,6 +40,7 @@ public class DifficultyPopupManager : BaseMenu
     
     private void DifficultySelected(int difficulty)
     {
+        SoundManager.instance.PlayVFX("Punch");
         var isMeme = isMemeToggle.isOn;
         rectTransform.ShakeAndHide(canvasGroup, HideMenu);
         OnDifficultySelected?.Invoke(_selectedSong, isMeme, difficulty);
@@ -71,6 +72,7 @@ public class DifficultyPopupManager : BaseMenu
 
     public override void EscapePressed()
     {
+        SoundManager.instance.PlayVFX("DiscordLeaveSound");
         rectTransform.ShakeAndHide(canvasGroup, HideMenu);
         UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
     }

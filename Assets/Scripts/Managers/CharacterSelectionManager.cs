@@ -4,9 +4,9 @@ using TMPro;
 using UI.Base;
 using UnityEngine;
 
-public class CharacterSelectionManager : MonoBehaviour
+public class CharacterSelectionManager : BaseMenu
 {
-    [SerializeField] private SelectedCharacterParent characterParent;
+    [SerializeField] private AnimationController controller;
     private Character[] characters;
     [SerializeField] private TMP_Text nameTextOutline;
     [SerializeField] private TMP_Text nameTextFill;
@@ -19,7 +19,9 @@ public class CharacterSelectionManager : MonoBehaviour
     void Start()
     {
         characters = characterParent.GetCharacters();
-
+        SoundManager.instance.StopAllSounds();
+        SoundManager.instance.PlayVFX("ToiletAmbiance");
+        SoundManager.instance.PlayVFX("ToiletMusic");
         selectedCharacter = Array.IndexOf(characters, characterParent.GetSelectedCharacter());
 
         UpdateInfoText();
@@ -59,6 +61,8 @@ public class CharacterSelectionManager : MonoBehaviour
 
     void DoorClosed()
     {
+        SoundManager.instance.PlayVFX("DoorChangeCharacter");
+
         characterParent.SelectCharacter(characters[selectedCharacter]);
         UpdateInfoText();
 
@@ -69,6 +73,7 @@ public class CharacterSelectionManager : MonoBehaviour
     
     public void OnUse()
     {
+        SoundManager.instance.PlayVFX("Punch");
         SaveManager.saveData.selectedCharacterID = characters[selectedCharacter].characterID;
 
         SaveManager.WriteSaveData();

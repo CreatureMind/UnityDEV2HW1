@@ -40,16 +40,18 @@ namespace UI
 
         private void Start()
         {
-            /*
-            add these listeners to the sliders once the sound manager is implemented
-            masterVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMasterVolume(value));
-            musicVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetMusicVolume(value));
-            sFXVolumeSlider.onValueChanged.AddListener((value) => SoundManager.instance.SetSFXVolume(value));  
-            */
+            
+            masterVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetMasterVolume(value));
+            musicVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetMusicVolume(value));
+            sFXVolumeSlider.onValueChanged.AddListener((value) => SoundMixer.instance.SetSFXVolume(value));  
+            
+            
+            HideMenu();
         }
         
         private void ResumeOnClick()
         {
+            SoundManager.instance.PlayVFX("Punch");
             if(UI_Manager.Instance.LastMenuType == MenuType.MainMenu)
             {
                 MainMenuOnClick();
@@ -63,6 +65,7 @@ namespace UI
         
         private void MainMenuOnClick()
         {
+            SoundManager.instance.PlayVFX("Punch");
             Time.timeScale = 1;
             menuTransform.DOShakePosition(doShakeDuration, doShakeStrength, doShakeVibrato).SetUpdate(true).OnComplete(() => UI_Manager.Instance.SwapMenu(MenuType.MainMenu));
             
@@ -92,6 +95,7 @@ namespace UI
 
         public override void EscapePressed()
         {
+            SoundManager.instance.PlayVFX("DiscordLeaveSound");
             ResumeOnClick();
         }
 

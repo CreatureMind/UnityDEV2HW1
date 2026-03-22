@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: a62dc34d0068bc34f9050938555ef10f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c6a469a10d71c9e4abed278bf62b285d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &638549725
 Transform:
@@ -3316,6 +3316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925322762}
   - component: {fileID: 1925322761}
+  - component: {fileID: 1925322763}
   m_Layer: 0
   m_Name: SoundMixer
   m_TagString: Untagged
@@ -3352,6 +3353,22 @@ Transform:
   - {fileID: 1038189703}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1925322763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925322760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b83e1ec8fecef4d85cca3f003d882f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  songWraperSo: {fileID: 11400000, guid: 0645036029a7595419e957611cf9fa05, type: 2}
+  vfxClips: {fileID: 11400000, guid: e80a6c36398ffbc49b7f3dbf9a311e42, type: 2}
+  musicMixerGroup: {fileID: -13322302457075283, guid: e2d29b83d45069245935c1c878360565, type: 2}
+  sfxMixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
 --- !u!114 &1980142558 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7946307421562977304, guid: 42f6f1bda3f1d4b4792396e704957839, type: 3}

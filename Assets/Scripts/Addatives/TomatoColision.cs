@@ -36,6 +36,7 @@ public class TomatoCollision : MonoBehaviour
     {
         hasCollided = true;
         rb.isKinematic = true;
+        SoundManager.instance.PlayVFX("TomatoSplat");
         if (tomatoMesh) tomatoMesh.enabled = false;
         if (tomatoCollider) tomatoCollider.enabled = false;
         if (splashParticles)

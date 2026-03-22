@@ -6,6 +6,10 @@ using UnityEngine.Serialization;
 public class SoundManager : MonoBehaviour
 {
     [FormerlySerializedAs("songs")] [SerializeField] private SongWrapperSO songWrapperSo;
+    [FormerlySerializedAs("SFXs")][SerializeField] private SFXWraperSO vfxClips;
+    [Header("Audio Mixer Groups")]
+    [SerializeField] private AudioMixerGroup musicMixerGroup;
+    [SerializeField] private AudioMixerGroup sfxMixerGroup;
     private Sound[] sounds;
     public static SoundManager instance;
 
@@ -23,8 +27,11 @@ public class SoundManager : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
         
-        sounds = new Sound[songWrapperSo.songs.Length];
+        // Initialize both songs and SFX in the same array
+        int totalSounds = songWraperSo.songs.Length + vfxClips.SFX.Length;
+        sounds = new Sound[totalSounds];
         
+        // Initialize songs first
         for (var i = 0; i < songWrapperSo.songs.Length; i++)
         {
             var song = songWrapperSo.songs[i];
@@ -36,6 +43,7 @@ public class SoundManager : MonoBehaviour
                 pitch = song.pitch,
                 loop = song.loop,
                 playOnAwake = song.playOnAwake,
+                mixerGroup = song.mixerGroup,
                 source = gameObject.AddComponent<AudioSource>()
             };
             sounds[i].source.clip = sounds[i].clip;
@@ -43,6 +51,32 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.pitch = sounds[i].pitch;
             sounds[i].source.loop = sounds[i].loop;
             sounds[i].source.playOnAwake = sounds[i].playOnAwake;
+            sounds[i].source.outputAudioMixerGroup = sounds[i].mixerGroup;
+        }
+        
+        // Initialize SFX after songs
+        int sfxStartIndex = songWraperSo.songs.Length;
+        for (var i = 0; i < vfxClips.SFX.Length; i++)
+        {
+            var sfx = vfxClips.SFX[i];
+            int soundIndex = sfxStartIndex + i;
+            sounds[soundIndex] = new Sound
+            {
+                name = sfx.soundName,
+                clip = sfx.audioClipNormal,
+                volume = sfx.volume,
+                pitch = sfx.pitch,
+                loop = sfx.loop,
+                playOnAwake = sfx.playOnAwake,
+                mixerGroup = sfx.mixerGroup,
+                source = gameObject.AddComponent<AudioSource>()
+            };
+            sounds[soundIndex].source.clip = sounds[soundIndex].clip;
+            sounds[soundIndex].source.volume = sounds[soundIndex].volume;
+            sounds[soundIndex].source.pitch = sounds[soundIndex].pitch;
+            sounds[soundIndex].source.loop = sounds[soundIndex].loop;
+            sounds[soundIndex].source.playOnAwake = sounds[soundIndex].playOnAwake;
+            sounds[soundIndex].source.outputAudioMixerGroup = sounds[soundIndex].mixerGroup;
         }
     }
 
@@ -53,7 +87,7 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return null;
+            return null;
             }
         }
 
@@ -67,8 +101,12 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
+            return;
             }
+        }
+        if (s.source.outputAudioMixerGroup == null)
+        {
+            s.source.outputAudioMixerGroup = sfxMixerGroup;
         }
 
         s.source.Play();
@@ -81,8 +119,8 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
+        }
         }
         
         s.source.Stop();
@@ -94,11 +132,16 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
         }
+    }
+    if (s.source.outputAudioMixerGroup == null)
+    {
+        s.source.outputAudioMixerGroup = musicMixerGroup;
+    }
 
-        s.source.Play();
+
+    s.source.Play();
     }
     public void StopMusic(string name)
     {
@@ -107,14 +150,14 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
+        }
         }
         
         s.source.Stop();
     }
 
-    public void StopAllMusic()
+    public void StopAllSounds()
     {
         foreach (var sound in sounds)
         {

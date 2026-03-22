@@ -1,5 +1,6 @@
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [CreateAssetMenu(fileName = "Song", menuName = "DDR/Song")]
 public class SongSO : ScriptableObject
@@ -18,4 +19,5 @@ public class SongSO : ScriptableObject
     [Range(60,300)]
     public int bpm;
     public DdrPatternSO[] patterns;
+    public AudioMixerGroup mixerGroup;
 }
