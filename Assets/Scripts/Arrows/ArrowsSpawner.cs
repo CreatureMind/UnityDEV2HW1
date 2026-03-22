@@ -30,6 +30,7 @@ public class ArrowsSpawner : MonoBehaviour
     
     private bool isPaused = false;
 
+    public static event Action OnTrackStarted;
     public static event Action<string,int> OnSongEnded;
     public static event Action OnBeat;
 
@@ -58,6 +59,8 @@ public class ArrowsSpawner : MonoBehaviour
     
     private void LoadSongData(SongSO songSo, bool meme, int difficulty)
     {
+        OnTrackStarted?.Invoke();
+
         var currentPattern = songSo.patterns[difficulty];
         
         songID = songSo.songID;

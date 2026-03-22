@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60383ccd9a95bfa4983c04136ddb372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  controller: {fileID: 501030731}
+  thisMenuType: 0
+  canvasGroup: {fileID: 0}
+  characterParent: {fileID: 1576684436}
   nameTextOutline: {fileID: 1132487488}
   nameTextFill: {fileID: 1380142916}
   door: {fileID: 202974098}
@@ -161,7 +163,7 @@ Transform:
   m_GameObject: {fileID: 22166880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 989.5584, y: 0.00001, z: 542.47205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -775,17 +777,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372718712}
   m_CullTransparentMesh: 1
---- !u!114 &501030731 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6126904951047076306, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
-  m_PrefabInstance: {fileID: 1576684435}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6ffb84665e7d3439c3c67eb5c4a1b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimationController
 --- !u!1 &607031246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2084,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+--- !u!114 &1576684436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7671304179609563572, guid: 36f6dd9120083f9418a160fc147510e1, type: 3}
+  m_PrefabInstance: {fileID: 1576684435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7398b200c0dd7419b26d5a9af9b26a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1606037080
 GameObject:
   m_ObjectHideFlags: 0

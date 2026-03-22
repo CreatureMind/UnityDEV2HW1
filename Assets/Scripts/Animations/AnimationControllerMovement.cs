@@ -3,14 +3,18 @@ using UnityEngine.AI;
 
 public class AnimationControllerMovement : MonoBehaviour
 {
+    [SerializeField] private SelectedCharacterParent character;
     private NavMeshAgent agent;
     private Animator anim;
     private int speedHash;
 
-    void Awake()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
+        anim = character.SelectedCharacterObj.GetComponent<Animator>();
+        character.OnCharacterChanged += c => {
+            anim = c.SelectedCharacterObj.GetComponent<Animator>();
+        };
         agent.updateRotation = true; 
         agent.updatePosition = true;
         speedHash = Animator.StringToHash("Speed");
