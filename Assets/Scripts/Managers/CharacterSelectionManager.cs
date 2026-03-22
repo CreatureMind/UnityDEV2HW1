@@ -19,7 +19,9 @@ public class CharacterSelectionManager : BaseMenu
     void Start()
     {
         characters = controller.GetCharacters();
-
+        SoundManager.instance.StopAllSounds();
+        SoundManager.instance.PlayVFX("ToiletAmbiance");
+        SoundManager.instance.PlayVFX("ToiletMusic");
         selectedCharacter = Array.IndexOf(characters, controller.GetSelectedCharacter());
 
         UpdateInfoText();
@@ -31,7 +33,6 @@ public class CharacterSelectionManager : BaseMenu
     public void OnArrowClicked(bool isLeft)
     {
         selectedCharacter += isLeft ? -1 : 1;
-
         if (selectedCharacter == -1)
             selectedCharacter = characters.Length - 1;
         else if (selectedCharacter == characters.Length)
@@ -59,6 +60,7 @@ public class CharacterSelectionManager : BaseMenu
 
     void DoorClosed()
     {
+        SoundManager.instance.PlayVFX("DoorChangeCharacter");
         controller.SelectCharacter(characters[selectedCharacter]);
         UpdateInfoText();
 
@@ -69,6 +71,7 @@ public class CharacterSelectionManager : BaseMenu
     
     public void OnUse()
     {
+        SoundManager.instance.PlayVFX("Punch");
         SaveManager.saveData.selectedCharacterID = characters[selectedCharacter].characterID;
 
         SaveManager.WriteSaveData();

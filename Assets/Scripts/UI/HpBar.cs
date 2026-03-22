@@ -67,10 +67,13 @@ public class HpBar : MonoBehaviour
 
         if (hpBarValue <= 0)
         {
-            SoundManager.instance.StopAllMusic();
+            SoundManager.instance.StopAllSounds();
+            SoundManager.instance.PlayVFX("VinylScrach");
             UI_Manager.Instance.SwapMenu(MenuType.DifficultySelectionMenu);
+            SoundManager.instance.PlayVFX("BarAmbiance");
+            SoundManager.instance.PlayVFX("BarMusic");
         }
-    }
+    }   
 
     private void AddLife()
     {

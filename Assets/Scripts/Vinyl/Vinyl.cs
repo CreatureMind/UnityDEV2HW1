@@ -61,6 +61,7 @@ namespace UI.Vinyl
 
         private void ToggleVinylRackOpened()
         {
+            SoundManager.instance.PlayVFX("ElevatorMusic");
             _isSelected = true;
             gameObject.layer = 0;
         }
@@ -78,7 +79,7 @@ namespace UI.Vinyl
         public void OnPointerEnter(PointerEventData eventData)
         {
             if (!_isSelected) return;
-
+            SoundManager.instance.PlayVFX("VinylWoosh");
             sr.transform.DOLocalMove(_startPos + Vector3.up * moveHeight + Vector3.forward * moveHeight, duration);
             sr.transform.DOLookAt(_camera.transform.position, duration);
             songName.gameObject.SetActive(true);
@@ -96,7 +97,7 @@ namespace UI.Vinyl
         public void OnPointerClick(PointerEventData eventData)
         {
             if (!_isSelected) return;
-
+            SoundManager.instance.StopAllSounds();
             OnSelectedSong?.Invoke(SongSo);
             UI_Manager.Instance.SwapMenu(MenuType.DifficultySelectionMenu);
         }

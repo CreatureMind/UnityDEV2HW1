@@ -118,10 +118,11 @@ public class ArrowsSpawner : MonoBehaviour
         
         SoundManager.instance.StopMusic(songName);
         yield return new WaitForSeconds(perPatternDelay);
-
+        SoundManager.instance.PlayVFX("MissionPassed");
         ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
-        
         OnSongEnded?.Invoke();
+        SoundManager.instance.PlayVFX("BarAmbiance");
+        SoundManager.instance.PlayVFX("BarMusic");
     }
 }
 

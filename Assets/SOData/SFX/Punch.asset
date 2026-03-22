@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Punch
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffectSO
   soundName: Punch
-  preview: {fileID: 0}
-  audioClipNormal: {fileID: 8300000, guid: 3565dd61795ac3443b6b576249d0d424, type: 3}
+  audioClipNormal: {fileID: 8300000, guid: 9c7a30901e052634bb0493842f69c62e, type: 3}
   mixerGroup: {fileID: 2731922977387769501, guid: e2d29b83d45069245935c1c878360565, type: 2}
-  volume: 0.4
+  volume: 1.5
   pitch: 1
   loop: 0
   playOnAwake: 1

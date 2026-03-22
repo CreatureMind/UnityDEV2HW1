@@ -9,10 +9,13 @@ public class BartenderNPCAnimations : MonoBehaviour
     [Header("Settings")] public float minWaitTime = 5f;
     public float maxWaitTime = 15f;
 
-        public string animationTrigger =  "Bartending" ;
+        private string animationTrigger =  "Bartending" ;
 
     void Start()
     {
+        SoundManager.instance.StopAllSounds();
+        SoundManager.instance.PlayVFX("BarAmbiance");
+        SoundManager.instance.PlayVFX("BarMusic");
         _animator = GetComponent<Animator>();
         StartCoroutine(AnimationRoutine());
     }

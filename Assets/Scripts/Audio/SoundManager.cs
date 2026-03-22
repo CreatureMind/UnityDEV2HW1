@@ -3,6 +3,8 @@ using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Serialization;
+using System.Collections.Generic;
+
 
 public class SoundManager : MonoBehaviour
 {
@@ -29,8 +31,11 @@ public class SoundManager : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
         
-        sounds = new Sound[songWraperSo.songs.Length];
+        // Initialize both songs and SFX in the same array
+        int totalSounds = songWraperSo.songs.Length + vfxClips.SFX.Length;
+        sounds = new Sound[totalSounds];
         
+        // Initialize songs first
         for (var i = 0; i < songWraperSo.songs.Length; i++)
         {
             var song = songWraperSo.songs[i];
@@ -51,7 +56,31 @@ public class SoundManager : MonoBehaviour
             sounds[i].source.loop = sounds[i].loop;
             sounds[i].source.playOnAwake = sounds[i].playOnAwake;
             sounds[i].source.outputAudioMixerGroup = sounds[i].mixerGroup;
-
+        }
+        
+        // Initialize SFX after songs
+        int sfxStartIndex = songWraperSo.songs.Length;
+        for (var i = 0; i < vfxClips.SFX.Length; i++)
+        {
+            var sfx = vfxClips.SFX[i];
+            int soundIndex = sfxStartIndex + i;
+            sounds[soundIndex] = new Sound
+            {
+                name = sfx.soundName,
+                clip = sfx.audioClipNormal,
+                volume = sfx.volume,
+                pitch = sfx.pitch,
+                loop = sfx.loop,
+                playOnAwake = sfx.playOnAwake,
+                mixerGroup = sfx.mixerGroup,
+                source = gameObject.AddComponent<AudioSource>()
+            };
+            sounds[soundIndex].source.clip = sounds[soundIndex].clip;
+            sounds[soundIndex].source.volume = sounds[soundIndex].volume;
+            sounds[soundIndex].source.pitch = sounds[soundIndex].pitch;
+            sounds[soundIndex].source.loop = sounds[soundIndex].loop;
+            sounds[soundIndex].source.playOnAwake = sounds[soundIndex].playOnAwake;
+            sounds[soundIndex].source.outputAudioMixerGroup = sounds[soundIndex].mixerGroup;
         }
     }
 
@@ -62,8 +91,8 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return null;
-            }
+            return null;
+        }
         }
 
         return s.clip;
@@ -76,8 +105,8 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
+        }
         }
         if (s.source.outputAudioMixerGroup == null)
         {
@@ -94,8 +123,8 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
+        }
         }
         
         s.source.Stop();
@@ -107,16 +136,16 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
         }
-        if (s.source.outputAudioMixerGroup == null)
-        {
-            s.source.outputAudioMixerGroup = musicMixerGroup;
-        }
+    }
+    if (s.source.outputAudioMixerGroup == null)
+    {
+        s.source.outputAudioMixerGroup = musicMixerGroup;
+    }
 
 
-        s.source.Play();
+    s.source.Play();
     }
     public void StopMusic(string name)
     {
@@ -125,14 +154,14 @@ public class SoundManager : MonoBehaviour
         {
             {
                 print("Sound" + name + "not found");
-                return;
-            }
+            return;
+        }
         }
         
         s.source.Stop();
     }
 
-    public void StopAllMusic()
+    public void StopAllSounds()
     {
         foreach (var sound in sounds)
         {
