@@ -23,12 +23,12 @@ public class UI_Manager : MonoBehaviour
         DontDestroyOnLoad(this);
         
         
-        InitDictionary();
         InputHandler.OnEscapePress += PlayerPressedEscape;
     }
     
     private void Start()
     {
+        InitDictionary();
         SetMenu(MenuType.MainMenu);
     }
     
@@ -54,10 +54,10 @@ public class UI_Manager : MonoBehaviour
         if (_menuDictionary.TryGetValue(menuType, out BaseMenu menuToShow)
             && _menuDictionary.TryGetValue(_currentMenu, out BaseMenu menuToHide))
         {
-            menuToShow.ShowMenu();
-            menuToHide.HideMenu();
             _lastMenu = _currentMenu;
             _currentMenu = menuType;
+            menuToShow.ShowMenu();
+            menuToHide.HideMenu();
             Debug.Log(_currentMenu);
         }
     }

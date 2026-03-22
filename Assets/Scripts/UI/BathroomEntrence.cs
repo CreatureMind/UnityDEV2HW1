@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class BathroomEntrence : BaseMenu, IPointerClickHandler
 {
+    private const string SceneName = "YoavUILoop";
     public void Awake()
     {
         DontDestroyOnLoad(this);
@@ -29,6 +30,9 @@ public class BathroomEntrence : BaseMenu, IPointerClickHandler
 
     public override void EscapePressed()
     {
-        SceneManager.LoadScene(0);
+        if (SceneManager.GetActiveScene().name != SceneName) // replace with your scene name
+        {
+            SceneManager.LoadScene(0);
+        }    
     }
 }

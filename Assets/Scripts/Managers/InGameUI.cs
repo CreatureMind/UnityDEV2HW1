@@ -147,7 +147,7 @@ public class InGameUI : BaseMenu
 
     public override void HideMenu()
     {
-        if (isPaused)
+        if (UI_Manager.Instance.LastMenuType == MenuType.InGameMenu)
         {
             canvasGroup.alpha = 0.5f;
         }
