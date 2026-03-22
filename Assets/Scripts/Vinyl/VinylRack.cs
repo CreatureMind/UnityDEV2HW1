@@ -147,5 +147,10 @@ namespace UI.Vinyl
             HideMenu();
             UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
         }
+
+        public override void ForceStop()
+        {
+            
+        }
     }
 }

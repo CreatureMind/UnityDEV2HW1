@@ -4,9 +4,20 @@ using UnityEngine.InputSystem;
 
 public class InputHandler : MonoBehaviour
 {
+    public static InputHandler Instance;
     public static event Action<Direction> OnPress;
     public static event Action OnEscapePress;
-    
+
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
+
     public void OnPressLeft(InputAction.CallbackContext context)
     {
         if (context.started)

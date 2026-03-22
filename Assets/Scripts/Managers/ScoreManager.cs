@@ -19,6 +19,7 @@ public class ScoreRangeData
 
 public class ScoreManager : Singleton<ScoreManager>
 {
+    public static ScoreManager Instance;
     protected override bool DontDestoryOnLoad => false;
 
     [SerializeField]
@@ -36,14 +37,26 @@ public class ScoreManager : Singleton<ScoreManager>
     [SerializeField]
     private int _mostPreciseScore;
 
-    public UnityEvent<int> OnScoreChangedEvent;
-    public UnityEvent<int> OnHitEvent;
-    public UnityEvent<int> OnComboChangedEvent;
+    public static Action<int> OnScoreChangedEvent;
+    public static Action<int> OnHitEvent;
+    public static Action<int> OnComboChangedEvent;
 
     private int _currentScore;
 
     private bool isPressed;
 
+    
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
+    
+    
     public int CurrentScore
     {
         get => _currentScore;

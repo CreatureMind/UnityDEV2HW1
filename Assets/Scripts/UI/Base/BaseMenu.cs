@@ -12,6 +12,7 @@ namespace UI.Base
         public abstract void ShowMenu();
         public abstract void HideMenu();
         public abstract void EscapePressed();
+        public abstract void ForceStop();
     
         public MenuType ThisMenuType => thisMenuType;
     }

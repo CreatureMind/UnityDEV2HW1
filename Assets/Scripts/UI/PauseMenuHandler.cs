@@ -90,6 +90,11 @@ namespace UI
             ResumeOnClick();
         }
 
+        public override void ForceStop()
+        {
+            
+        }
+
         private IEnumerator CountDown()
         {
             HideMenu();

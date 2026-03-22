@@ -53,8 +53,20 @@ public class AnimationController : MonoBehaviour
 
     private void Start()
     {
+        InGameUI.OnMenuOpened += StartDancingState;
+        InGameUI.OnMenuClosed += ResetDancingState;
+    }
+
+    private void StartDancingState()
+    {
         TomatoCollision.OnTomatoHit += TomatoHitPlayer;
-        ScoreManager.Instance?.OnComboChangedEvent.AddListener(OnComboChanged);
+        ScoreManager.OnComboChangedEvent += OnComboChanged;
+    }
+
+    private void ResetDancingState()
+    {
+        TomatoCollision.OnTomatoHit -= TomatoHitPlayer;
+        StopAllCoroutines();
     }
 
     private void OnComboChanged(int combo)

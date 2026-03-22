@@ -9,6 +9,7 @@ using UI.Base;
 
 public class InGameUI : BaseMenu
 {
+    public static InGameUI Instance;
     [Header("Score")]
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text scoreNumText;
@@ -38,21 +39,27 @@ public class InGameUI : BaseMenu
 
     void OnEnable()
     {
-        ScoreManager.Instance.OnScoreChangedEvent.AddListener(ChangeScore);
-        ScoreManager.Instance.OnHitEvent.AddListener(ChangeCompliment);
-        ScoreManager.Instance.OnComboChangedEvent.AddListener(ChangeCombo);
+        ScoreManager.OnScoreChangedEvent += ChangeScore;
+        ScoreManager.OnHitEvent += ChangeCompliment;
+        ScoreManager.OnComboChangedEvent += ChangeCombo;
     }
 
     void OnDisable()
     {
-        ScoreManager.Instance?.OnScoreChangedEvent.RemoveListener(ChangeScore);
-        ScoreManager.Instance?.OnHitEvent.RemoveListener(ChangeCompliment);
-        ScoreManager.Instance?.OnComboChangedEvent.RemoveListener(ChangeCombo);
+        ScoreManager.OnScoreChangedEvent -= ChangeScore;
+        ScoreManager.OnHitEvent -= ChangeCompliment;
+        ScoreManager.OnComboChangedEvent -= ChangeCombo;
     }
 
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+        
         DontDestroyOnLoad(this);
+        
     }
 
     private void Start()
@@ -130,39 +137,38 @@ public class InGameUI : BaseMenu
             }
         }
     }
+    
+    public void ResetInGameUI()
+    {
+        canvasGroup.alpha = 0f;
+        OnMenuClosed?.Invoke();
+        virtualCamera.Priority = 0;
+    }
 
     public override void ShowMenu()
     {
         canvasGroup.alpha = 1;
-        if (isPaused)
-        {
-            isPaused = false;
-        }
-        else
-        {
-            OnMenuOpened?.Invoke();
-            virtualCamera.Priority = 100;
-        }
+        OnMenuOpened?.Invoke();
+        virtualCamera.Priority = 100;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
     }
 
     public override void HideMenu()
     {
-        if (UI_Manager.Instance.LastMenuType == MenuType.InGameMenu)
-        {
-            canvasGroup.alpha = 0.5f;
-        }
-        else
-        {
-            canvasGroup.alpha = 0f;
-            OnMenuClosed?.Invoke();
-            virtualCamera.Priority = 0;
-        }
+        canvasGroup.alpha = 0.5f;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
     }
 
     public override void EscapePressed()
     {
-        isPaused = true;
         UI_Manager.Instance.SwapMenu(MenuType.PauseMenu);
+    }
+
+    public override void ForceStop()
+    {
+        ResetInGameUI();
     }
 }
 

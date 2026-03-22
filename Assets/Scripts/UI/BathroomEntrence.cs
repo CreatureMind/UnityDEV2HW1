@@ -7,9 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class BathroomEntrence : BaseMenu, IPointerClickHandler
 {
+    public static BathroomEntrence Instance;
     private const string SceneName = "YoavUILoop";
     public void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         DontDestroyOnLoad(this);
     }
 
@@ -34,5 +40,10 @@ public class BathroomEntrence : BaseMenu, IPointerClickHandler
         {
             SceneManager.LoadScene(0);
         }    
+    }
+
+    public override void ForceStop()
+    {
+        
     }
 }

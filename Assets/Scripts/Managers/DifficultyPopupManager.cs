@@ -74,4 +74,9 @@ public class DifficultyPopupManager : BaseMenu
         rectTransform.ShakeAndHide(canvasGroup, HideMenu);
         UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
     }
+
+    public override void ForceStop()
+    {
+        
+    }
 }

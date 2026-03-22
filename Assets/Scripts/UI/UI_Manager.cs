@@ -61,6 +61,14 @@ public class UI_Manager : MonoBehaviour
             Debug.Log(_currentMenu);
         }
     }
+    
+    public void ForceStopMenu(MenuType menuType)
+    {
+        if (_menuDictionary.TryGetValue(menuType, out BaseMenu menu))
+        {
+            menu.ForceStop();
+        }
+    }
 
     private void InitDictionary()
     {

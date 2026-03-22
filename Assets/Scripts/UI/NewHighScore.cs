@@ -69,5 +69,10 @@ namespace UI
             transform.ShakeAndHide(canvasGroup, HideMenu);
             UI_Manager.Instance.SwapMenu(MenuType.MainMenu);
         }
+
+        public override void ForceStop()
+        {
+            
+        }
     }
 }
