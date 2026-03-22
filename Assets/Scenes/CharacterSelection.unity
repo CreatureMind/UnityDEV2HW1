@@ -148,8 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60383ccd9a95bfa4983c04136ddb372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  thisMenuType: 0
-  canvasGroup: {fileID: 0}
   controller: {fileID: 501030731}
   nameTextOutline: {fileID: 1132487488}
   nameTextFill: {fileID: 1380142916}
@@ -163,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 22166880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 989.5584, y: 0.00001, z: 542.47205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1522,6 +1522,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   thisMenuType: 0
   canvasGroup: {fileID: 2828471037257074549}
-  lastScoreText: {fileID: 0}
+  lastScoreText: {fileID: 6559168846738919294}
   newScoreText: {fileID: 4792688382947274500}
   quitButton: {fileID: 7531013704620547543}

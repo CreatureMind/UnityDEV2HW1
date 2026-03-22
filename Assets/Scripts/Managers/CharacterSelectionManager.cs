@@ -4,7 +4,7 @@ using TMPro;
 using UI.Base;
 using UnityEngine;
 
-public class CharacterSelectionManager : BaseMenu
+public class CharacterSelectionManager : MonoBehaviour
 {
     [SerializeField] private AnimationController controller;
     private Character[] characters;
@@ -72,20 +72,5 @@ public class CharacterSelectionManager : BaseMenu
         SaveManager.saveData.selectedCharacterID = characters[selectedCharacter].characterID;
 
         SaveManager.WriteSaveData();
-    }
-
-    public override void ShowMenu()
-    {
-        // backfip :sunglasses:
-    }
-
-    public override void HideMenu()
-    {
-        //b to bar
-    }
-
-    public override void EscapePressed()
-    {
-        //b to bar
     }
 }
