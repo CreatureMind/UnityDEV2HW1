@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     public Camera cam;
     public NavMeshAgent agent;
-    public ThirdPersonController character;
 
     void Start()
     {
@@ -26,16 +25,10 @@ public class PlayerController : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+
         if (agent.remainingDistance > agent.stoppingDistance)
         {
             float speedForAnimation = agent.velocity.magnitude;
-            character.Move(speedForAnimation);
-        }
-        else
-        {
-            character.MoveSpeed = 0f;
-            
         }
     }
-    
 }

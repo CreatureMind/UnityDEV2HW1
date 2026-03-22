@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596460108}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.15214449, y: 0.82547635, z: -0.26448283, w: 0.4748576}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3037,14 +3037,6 @@ PrefabInstance:
     - target: {fileID: 1880857803469672474, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_Name
       value: WalkingDancer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853220333640689000, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5711606484281595723, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
-      propertyPath: m_SlopeLimit
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812706625632296430, guid: 4f91195e3009d0547a35466ddd31c5c2, type: 3}
       propertyPath: m_LocalPosition.x
