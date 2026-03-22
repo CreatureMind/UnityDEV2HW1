@@ -49,7 +49,7 @@ public class TomatoThrow : MonoBehaviour
     private Vector3 GetRandomPointInBox(BoxCollider box)
     {
         var center = box.center;
-        var extents = box.size * 0.5f;
+        var extents = box.size * 0.5f; // Half the size of the box
 
         Vector3 randomLocalPoint = new Vector3(
             Random.Range(center.x - extents.x, center.x + extents.x),

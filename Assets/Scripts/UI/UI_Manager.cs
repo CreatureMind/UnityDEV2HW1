@@ -88,9 +88,6 @@ public class UI_Manager : MonoBehaviour
     public MenuType CurrentMenuType => _currentMenu;
 }
 
-
-
-
 public enum MenuType
 {
     MainMenu,

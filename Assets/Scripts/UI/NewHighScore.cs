@@ -1,3 +1,4 @@
+using Arrows;
 using UI.Base;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,9 @@ namespace UI
         
         [Header("Buttons")]
         [SerializeField] private Button quitButton;
+        
+        [Header("Tween Settings")]
+        [SerializeField] private float doScaleDuration = 0.4f;
         
         void OnEnable()
         {
@@ -55,7 +59,7 @@ namespace UI
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
             transform.localScale = Vector3.zero;
-            transform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.InOutSine);
+            transform.DOScale(Vector3.one, doScaleDuration).SetUpdate(true).SetEase(Ease.InOutSine);
         }
 
         public override void HideMenu()

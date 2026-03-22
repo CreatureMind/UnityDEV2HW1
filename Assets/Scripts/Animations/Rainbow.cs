@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class Rainbow : MonoBehaviour
 {
     [SerializeField] private float rainbowCycleDuration;
-    [SerializeField] private Graphic visual;
+    [SerializeField] private Graphic uiImage;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class Rainbow : MonoBehaviour
     {
         var rainbowColor = Color.HSVToRGB(hueValue, 1f, 1f);
         
-        if (!visual) return;
-        visual.color = rainbowColor;
+        if (!uiImage && !spriteRenderer) return;
+        if (spriteRenderer) spriteRenderer.color = rainbowColor;
+        if (uiImage) uiImage.color = rainbowColor;
     }
 }

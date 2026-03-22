@@ -24,10 +24,15 @@ namespace UI
         [Header("Counter")]
         [SerializeField] private Image counterImage;
         [SerializeField] private Sprite[] numberSprites;
+        
+        [Header("Tween Settings")]
+        [SerializeField] private float doShakeDuration = 0.2f;
+        [SerializeField] private float doShakeStrength = 0.15f;
+        [SerializeField] private int doShakeVibrato = 40;
+        [SerializeField] private float doScaleDuration = 0.4f;
 
         private void Awake()
         {
-            
             masterVolumeSlider.value = musicVolumeSlider.value = musicVolumeSlider.value = 1;
             resumeButton.onClick.AddListener(ResumeOnClick);
             mainMenuButton.onClick.AddListener(MainMenuOnClick);
@@ -59,7 +64,7 @@ namespace UI
         private void MainMenuOnClick()
         {
             Time.timeScale = 1;
-            menuTransform.DOShakePosition(0.2f, 15, 40).SetUpdate(true).OnComplete(() => UI_Manager.Instance.SwapMenu(MenuType.MainMenu));
+            menuTransform.DOShakePosition(doShakeDuration, doShakeStrength, doShakeVibrato).SetUpdate(true).OnComplete(() => UI_Manager.Instance.SwapMenu(MenuType.MainMenu));
             
             if (UI_Manager.Instance.LastMenuType != MenuType.MainMenu)
             {
@@ -74,7 +79,7 @@ namespace UI
             canvasGroup.blocksRaycasts = true;
             canvasGroup.interactable = true;
             menuTransform.localScale = Vector3.zero;
-            menuTransform.DOScale(Vector3.one, 0.4f).SetUpdate(true).SetEase(Ease.OutBack);
+            menuTransform.DOScale(Vector3.one, doScaleDuration).SetUpdate(true).SetEase(Ease.OutBack);
         }
 
         public override void HideMenu()
@@ -100,10 +105,10 @@ namespace UI
             HideMenu();
             counterImage.gameObject.SetActive(true);
             
-            for (int i = numberSprites.Length; i > 0; i--)
+            for (var i = numberSprites.Length; i > 0; i--)
             {
                 counterImage.sprite = numberSprites[i - 1];
-                counterImage.PlayPopShakeFade(scaleDuration: 0.4f, shakeDuration: 0.2f, fadeDuration: 0.5f, shakeStrength: 0.15f, fromZero: true, useUnscaledTime: true, deactivateOnComplete: false);
+                counterImage.PlayPopShakeFade();
                 yield return new WaitForSecondsRealtime(1);
             }
             
@@ -112,9 +117,5 @@ namespace UI
             
             UI_Manager.Instance.ReturnToPreviousMenu();
         }
-
     }
-    
-    
-    
 }

@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour
 {
-    [FormerlySerializedAs("songs")] [SerializeField] private SongWraperSO songWraperSo;
+    [FormerlySerializedAs("songs")] [SerializeField] private SongWrapperSO songWrapperSo;
     private Sound[] sounds;
     public static SoundManager instance;
 
@@ -23,11 +23,11 @@ public class SoundManager : MonoBehaviour
         
         DontDestroyOnLoad(gameObject);
         
-        sounds = new Sound[songWraperSo.songs.Length];
+        sounds = new Sound[songWrapperSo.songs.Length];
         
-        for (var i = 0; i < songWraperSo.songs.Length; i++)
+        for (var i = 0; i < songWrapperSo.songs.Length; i++)
         {
-            var song = songWraperSo.songs[i];
+            var song = songWrapperSo.songs[i];
             sounds[i] = new Sound
             {
                 name = song.songName,

@@ -24,7 +24,7 @@ namespace UI.Vinyl
     
         [FormerlySerializedAs("songs")]
         [Header("Vinyls")]
-        [SerializeField] private SongWraperSO songWraperSo;
+        [SerializeField] private SongWrapperSO songWrapperSo;
         [SerializeField] private Vinyl[] vinyls;
     
         public static event Action OnVinylRackOpened;
@@ -67,7 +67,7 @@ namespace UI.Vinyl
         
             if (scroll == 0f) return;
         
-            int totalSongs = songWraperSo.songs.Length;
+            int totalSongs = songWrapperSo.songs.Length;
             int maxOffset = Mathf.Max(0, totalSongs - vinyls.Length);
 
             if (scroll > 0f)
@@ -105,10 +105,10 @@ namespace UI.Vinyl
             {
                 int songIndex = i + _scrollOffset;
 
-                if (songIndex < songWraperSo.songs.Length)
+                if (songIndex < songWrapperSo.songs.Length)
                 {
                     vinyls[i].gameObject.SetActive(true);
-                    vinyls[i].SetSong(songWraperSo.songs[songIndex]);
+                    vinyls[i].SetSong(songWrapperSo.songs[songIndex]);
                 }
                 else
                 {
@@ -123,6 +123,7 @@ namespace UI.Vinyl
             
             if ((clickedObject & vinylRackLayer.value) != 0 && !_isClicked)
             {
+                ShowMenu();
                 UI_Manager.Instance.SwapMenu(MenuType.SongSelectionMenu);
             }
         }

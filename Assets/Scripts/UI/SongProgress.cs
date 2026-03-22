@@ -1,4 +1,5 @@
 using System;
+using Arrows;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +11,11 @@ public class SongProgress : MonoBehaviour
     [SerializeField] private Image innerMarker;
     [SerializeField] private float cycleDuration;
     
-    private float songLength;
-    private float progress;
-    private float progressPerBeat;
+    private float _songLength;
+    private float _progress;
+    private float _progressPerBeat;
+    
+    private const float SIXTY_SECONDS = 60f;
     
     void OnEnable()
     {
@@ -42,16 +45,16 @@ public class SongProgress : MonoBehaviour
     {
         var currentPattern = songSo.patterns[difficulty];
         
-        songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
-        songLength = songLength - currentPattern.delay - currentPattern.delay;
-        var totalBeats = songLength * songSo.bpm / 60f;
-        progressPerBeat = 1f / totalBeats;
+        _songLength = !meme ? songSo.audioClipNormal.length : songSo.audioClipMeme.length;
+        _songLength = _songLength - currentPattern.delay - currentPattern.delay;
+        var totalBeats = _songLength * songSo.bpm / SIXTY_SECONDS;
+        _progressPerBeat = 1f / totalBeats;
     }
 
     private void AddProgress()
     {
-        progress += progressPerBeat;
-        slider.value = progress;
+        _progress += _progressPerBeat;
+        slider.value = _progress;
     }
     
     private void StartRainbowCycle()

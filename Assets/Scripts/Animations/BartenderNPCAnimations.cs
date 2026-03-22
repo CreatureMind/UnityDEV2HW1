@@ -3,14 +3,13 @@ using System.Collections;
 
 public class BartenderNPCAnimations : MonoBehaviour
 {
-    
+    [Header("Settings")]
+    [SerializeField] private float minWaitTime = 5f;
+    [SerializeField] private float maxWaitTime = 15f;
+    [SerializeField] private string animationTrigger =  "Bartending" ;
+
     private Animator _animator;
-
-    [Header("Settings")] public float minWaitTime = 5f;
-    public float maxWaitTime = 15f;
-
-        public string animationTrigger =  "Bartending" ;
-
+    
     void Start()
     {
         _animator = GetComponent<Animator>();

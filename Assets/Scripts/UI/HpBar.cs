@@ -16,9 +16,9 @@ public class HpBar : MonoBehaviour
     [SerializeField] private Image fillImage;
     [SerializeField] private float cycleDuration;
     
-    private float gainAmount;
-    private float penaltyAmount;
-    private float offset;
+    private float _gainAmount;
+    private float _penaltyAmount;
+    private float _offset;
     private bool isLoaded = false;
     
     void OnEnable()
@@ -41,14 +41,14 @@ public class HpBar : MonoBehaviour
 
         var gain = 100 / song.patterns[difficulty].gain;
         var penalty = 100 / song.patterns[difficulty].penalty;
-        gainAmount = 1 / gain;
-        penaltyAmount = 1 / penalty;
+        _gainAmount = 1 / gain;
+        _penaltyAmount = 1 / penalty;
         isLoaded = true;
     }
     
     private void Start()
     {
-        DOTween.To(() => offset, x => offset = x, breatheAmount, breatheSpeed)
+        DOTween.To(() => _offset, x => _offset = x, breatheAmount, breatheSpeed)
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
         
@@ -66,7 +66,7 @@ public class HpBar : MonoBehaviour
     {
         if (!isLoaded) return;
         hpBarValue = Mathf.Clamp01(hpBarValue);
-        slider.value = Mathf.Clamp(hpBarValue + offset, 0f, 1f);
+        slider.value = Mathf.Clamp(hpBarValue + _offset, 0f, 1f);
 
         if (hpBarValue <= 0)
         {
@@ -78,12 +78,12 @@ public class HpBar : MonoBehaviour
 
     private void AddLife()
     {
-        DOTween.To(() => hpBarValue, x => hpBarValue = x, hpBarValue + gainAmount, 0.2f);
+        DOTween.To(() => hpBarValue, x => hpBarValue = x, hpBarValue + _gainAmount, 0.2f);
     }
     
     private void RemoveLife()
     {
-        DOTween.To(() => hpBarValue, x => hpBarValue = x, hpBarValue - penaltyAmount, 0.2f);
+        DOTween.To(() => hpBarValue, x => hpBarValue = x, hpBarValue - _penaltyAmount, 0.2f);
     }
     
     private void StartRainbowCycle()

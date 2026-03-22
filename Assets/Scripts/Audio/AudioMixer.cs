@@ -4,9 +4,13 @@ using UnityEngine.Audio;
 public class SoundMixer : MonoBehaviour
 {
     public static SoundMixer Instance { get; private set; }
-
+    
+    [Header("Mixer Parameters")]
+    [SerializeField] private string masterVol = "MasterVol";
+    [SerializeField] private string musicVol = "MusicVol";
+    [SerializeField] private string sfxVol = "SFXVol";
     [SerializeField] private AudioMixer mainMixer;
-
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -19,9 +23,9 @@ public class SoundMixer : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SetMasterVolume(float value) => SetVolume("MasterVol", value);
-    public void SetMusicVolume(float value) => SetVolume("MusicVol", value);
-    public void SetSFXVolume(float value) => SetVolume("SFXVol", value);
+    public void SetMasterVolume(float value) => SetVolume(masterVol, value);
+    public void SetMusicVolume(float value) => SetVolume(musicVol, value);
+    public void SetSFXVolume(float value) => SetVolume(sfxVol, value);
 
     private void SetVolume(string parameterName, float value)
     {

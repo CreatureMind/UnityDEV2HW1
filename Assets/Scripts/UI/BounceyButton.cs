@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class BounceyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IPointerExitHandler, IPointerEnterHandler, ICancelHandler
 {
-    private Vector3 _originalScale;
-    [SerializeField] private TweenOptions<Vector3> _pressedTween;
-    [SerializeField] private TweenOptions _exitPressTween;
-
+    [SerializeField] private TweenOptions<Vector3> pressedTween;
+    [SerializeField] private TweenOptions exitPressTween;
     [SerializeField] private UnityEvent onClick;
 
-    private bool isHolding = false;
+    private Vector3 _originalScale;
+    private bool _isHolding = false;
 
     void Start()
     {
@@ -22,15 +21,15 @@ public class BounceyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandl
     public void OnPointerDown(PointerEventData eventData)
     {
         RunPressedTween();
-        isHolding = true;
+        _isHolding = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         RunExitTween();
-        if (isHolding)
+        if (_isHolding)
             onClick.Invoke();
-        isHolding = false;
+        _isHolding = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -40,7 +39,7 @@ public class BounceyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isHolding)
+        if (_isHolding)
         {
             RunPressedTween();
         }
@@ -48,19 +47,19 @@ public class BounceyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandl
 
     public void OnCancel(BaseEventData eventData)
     {
-        isHolding = false;
+        _isHolding = false;
         RunExitTween();
     }
 
     void RunExitTween()
     {
         transform.DOKill();
-        _exitPressTween.Apply(transform.DOScale, _originalScale);
+        exitPressTween.Apply(transform.DOScale, _originalScale);
     }
 
     void RunPressedTween()
     {
         transform.DOKill();
-        _pressedTween.Apply(transform.DOScale);
+        pressedTween.Apply(transform.DOScale);
     }
 }

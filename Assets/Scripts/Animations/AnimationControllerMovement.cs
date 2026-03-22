@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 public class AnimationControllerMovement : MonoBehaviour
 {
+    [SerializeField] private float minimumSpeed = 0.5f;
+    [SerializeField] private float smoothedLookSpeed = 10f;
+    
     [SerializeField] private SelectedCharacterParent character;
     private NavMeshAgent agent;
     private Animator anim;
@@ -25,10 +28,11 @@ public class AnimationControllerMovement : MonoBehaviour
         Vector3 horizontalVelocity = new Vector3(agent.velocity.x, 0, agent.velocity.z);
         float currentSpeed = horizontalVelocity.magnitude;
         anim.SetFloat(speedHash, currentSpeed, 0.1f, Time.deltaTime);
-        if (currentSpeed > 0.1f)
+        
+        if (currentSpeed > minimumSpeed)
         {
             Quaternion lookRotation = Quaternion.LookRotation(horizontalVelocity.normalized);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * smoothedLookSpeed);
         }
     }
 }

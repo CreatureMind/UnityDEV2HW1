@@ -12,10 +12,13 @@ namespace UI.Vinyl
         [SerializeField] private SpriteRenderer sr;
         [SerializeField] private TMP_Text songName;
 
-        [Header("Tween Settings")] [SerializeField]
-        private float moveHeight = 0.1f;
-
+        [Header("Tween Settings")] 
+        [SerializeField] private float moveHeight = 0.1f;
         [SerializeField] private float duration = 0.3f;
+
+        [Header("Layers")]
+        [SerializeField] private int defaultLayer = 0;
+        [SerializeField] private int ignoreRaycast = 2;
 
         private Camera _camera;
         private Vector3 _startPos;
@@ -62,13 +65,13 @@ namespace UI.Vinyl
         private void ToggleVinylRackOpened()
         {
             _isSelected = true;
-            gameObject.layer = 0;
+            gameObject.layer = defaultLayer;
         }
 
         private void ToggleVinylRackClosed()
         {
             _isSelected = false;
-            gameObject.layer = 2;
+            gameObject.layer = ignoreRaycast;
             
             sr.transform.DOLocalMove(_startPos, duration);
             sr.transform.DOLocalRotateQuaternion(_startRot, duration);

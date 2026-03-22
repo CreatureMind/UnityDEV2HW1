@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8336366786125558618}
   - component: {fileID: 6825809940640691707}
   - component: {fileID: 448751686686310646}
+  - component: {fileID: -2897368258417875379}
   - component: {fileID: 167188765155417303}
   - component: {fileID: 6644661046961210730}
   m_Layer: 5
@@ -93,8 +94,20 @@ MonoBehaviour:
   speed: 300
   isSuccessful: 0
   direction: 0
-  image: {fileID: 6825809940640691707}
-  cycleDuration: 1.5
+--- !u!114 &-2897368258417875379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652269805553722299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ad983c3c3b23a488ff52961ba9c775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rainbow
+  rainbowCycleDuration: 1.5
+  visual: {fileID: 6825809940640691707}
 --- !u!61 &167188765155417303
 BoxCollider2D:
   m_ObjectHideFlags: 0

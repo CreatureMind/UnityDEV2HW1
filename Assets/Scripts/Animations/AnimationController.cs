@@ -5,7 +5,6 @@ using UnityEngine;
 
 
 
-
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] private SelectedCharacterParent charactersHolder;
@@ -40,14 +39,13 @@ public class AnimationController : MonoBehaviour
     private static readonly int NormalDancingBlend = Animator.StringToHash("NormalDancingBlend");
     private static readonly int IsCrazyDancing = Animator.StringToHash("IsCrazyDancing");
     private static readonly int IsDancing = Animator.StringToHash("IsDancing");
+    private static readonly int GotHit = Animator.StringToHash("GotHit");
     
     private const int ComboNormalStart = 10;
     private const int ComboNormalEnd = 29;
     private const int ComboCrazyStart = 30; 
 
     #endregion
-    
-    
 
     private Coroutine fadeCoroutine;
 
@@ -104,7 +102,7 @@ public class AnimationController : MonoBehaviour
         if (!Anima) return;
 
         Anima.SetLayerWeight(layerIndex, initialWeight);
-        Anima.SetTrigger("GotHit");
+        Anima.SetTrigger(GotHit);
 
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
         fadeCoroutine = StartCoroutine(FadeOutRoutine());

@@ -1,3 +1,4 @@
+using Arrows;
 using UnityEngine;
 
 public class SpecificCharacterEnabler : MonoBehaviour
