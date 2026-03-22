@@ -32,22 +32,24 @@ namespace UI
         
         public void LoadScore(string songID, int songDifficulty)
         {
-            SaveManager.LoadSaveData();
-            
-            var currentScore = ScoreManager.Instance.CurrentScore;
-            var savedScore = SaveManager.saveData.songsData[songID].scoreForDifficulty[songDifficulty];
-            
-            lastScoreText.text = savedScore == 0 ? "0" : savedScore.ToString();
-            newScoreText.text = currentScore.ToString();
-            
-            if (currentScore > savedScore)
-            {
-                ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
-            }
+            // SaveManager.LoadSaveData();
+            //
+            // var currentScore = ScoreManager.Instance.CurrentScore;
+            // var savedScore = SaveManager.saveData.songsData[songID].scoreForDifficulty[songDifficulty];
+            //
+            // lastScoreText.text = savedScore == 0 ? "0" : savedScore.ToString();
+            // newScoreText.text = currentScore.ToString();
+            //
+            // if (currentScore > savedScore)
+            // {
+            //     ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+            // }
+            UI_Manager.Instance.SwapMenu(MenuType.NewHighScore);
         }
         
         public override void ShowMenu()
         {
+            UI_Manager.Instance.ForceStopMenu(MenuType.InGameMenu);
             Time.timeScale = 0;
             canvasGroup.alpha = 1; 
             canvasGroup.blocksRaycasts = true;

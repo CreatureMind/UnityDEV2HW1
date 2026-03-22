@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.Events;
@@ -16,6 +17,12 @@ public static class SaveManager
         if (!File.Exists(SAVE_FILE_PATH))
         {
             saveData = new SaveData();
+    
+            // Ensure dictionary is initialized
+            if (saveData.songsData == null)
+            {
+                saveData.songsData = new Dictionary<string, SongSaveData>();
+            }
 
             OnSaveLoaded?.Invoke();
             return;

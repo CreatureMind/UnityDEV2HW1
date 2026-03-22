@@ -60,7 +60,7 @@ public class ArrowsSpawner : MonoBehaviour
     private void LoadSongData(SongSO songSo, bool meme, int difficulty)
     {
         OnTrackStarted?.Invoke();
-
+        Debug.Log($"{songSo} + {meme} + {difficulty}");
         var currentPattern = songSo.patterns[difficulty];
         
         songID = songSo.songID;
@@ -129,7 +129,7 @@ public class ArrowsSpawner : MonoBehaviour
         SoundManager.instance.StopMusic(songName);
         yield return new WaitForSeconds(perPatternDelay);
 
-        ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
+        //ScoreManager.Instance.SaveHighScoreFor(songID, songDifficulty);
         
         OnSongEnded?.Invoke(songID, songDifficulty);
     }

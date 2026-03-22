@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/YoavUILoop.unity
+    path: Assets/Scenes/MainScene.unity
     guid: ae27fceff8295c54fa207b6561cdb8b0
   - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity

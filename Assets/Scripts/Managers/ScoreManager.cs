@@ -140,6 +140,7 @@ public class ScoreManager : Singleton<ScoreManager>
         if (!SaveManager.saveData.songsData.ContainsKey(songID))
         {
             songData = new();
+            songData.scoreForDifficulty = new Dictionary<int, int>();
             songData.scoreForDifficulty.Add(difficulty, _currentScore);
 
             SaveManager.saveData.songsData.Add(songID, songData);
